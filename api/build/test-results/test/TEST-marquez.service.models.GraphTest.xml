@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.service.models.GraphTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:40:55" hostname="MacBook-Air.local" time="0.125">
+  <properties/>
+  <testcase name="testDirectedGraph_edges_unordered" classname="marquez.service.models.GraphTest" time="0.122"/>
+  <testcase name="testDirectedGraph_edges_backwards" classname="marquez.service.models.GraphTest" time="0.0"/>
+  <testcase name="testDirectedGraph_unordered" classname="marquez.service.models.GraphTest" time="0.0"/>
+  <testcase name="testDirectedGraph_backwards" classname="marquez.service.models.GraphTest" time="0.0"/>
+  <testcase name="testDirectedGraph" classname="marquez.service.models.GraphTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

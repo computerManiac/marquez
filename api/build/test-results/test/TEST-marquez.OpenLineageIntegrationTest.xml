@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.OpenLineageIntegrationTest" tests="34" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:40" hostname="MacBook-Air.local" time="3.566">
+  <properties/>
+  <testcase name="testSendOpenLineageEventFailsJsonProcessing()" classname="marquez.OpenLineageIntegrationTest" time="0.078"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowHandlesParentForEventsOutOfOrder()" classname="marquez.OpenLineageIntegrationTest" time="0.234"/>
+  <testcase name="[1] eventBody={&quot;eventTime&quot;: &quot;2021-11-03T10:53:52.427343&quot;, &quot;eventType&quot;: &quot;COMPLETE&quot;, &quot;inputs&quot;: [{&quot;facets&quot;: {}, &quot;name&quot;: null, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}], &quot;job&quot;: {&quot;facets&quot;: {}, &quot;name&quot;: &quot;testing_name_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}, &quot;outputs&quot;: [], &quot;producer&quot;: &quot;me&quot;, &quot;run&quot;: {&quot;facets&quot;: {}, &quot;runId&quot;: &quot;dae0d60a-6010-4c37-980e-c5270f5a6be4&quot;}}" classname="marquez.OpenLineageIntegrationTest" time="0.063"/>
+  <testcase name="[2] eventBody={&quot;eventTime&quot;: &quot;2021-11-03T10:53:52.427343&quot;, &quot;eventType&quot;: &quot;COMPLETE&quot;, &quot;inputs&quot;: [{&quot;facets&quot;: {}, &quot;name&quot;: &quot;OPEN_LINEAGE_DEMO.DEMO.SOURCE_TABLE_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}], &quot;job&quot;: {&quot;facets&quot;: {}, &quot;name&quot;: &quot;testing_name_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}, &quot;outputs&quot;: [{&quot;facets&quot;: {&quot;schema&quot;: {&quot;_producer&quot;: &quot;https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client&quot;, &quot;_schemaURL&quot;: &quot;https://openlineage.io/spec/facets/1-0-0/DataQualityAssertionsDatasetFacet.json&quot;,                                  &quot;…" classname="marquez.OpenLineageIntegrationTest" time="0.033"/>
+  <testcase name="[3] eventBody={&quot;eventTime&quot;: &quot;2021-11-03T10:53:52.427343&quot;, &quot;eventType&quot;: &quot;COMPLETE&quot;, &quot;inputs&quot;: [{&quot;facets&quot;: {}, &quot;name&quot;: &quot;OPEN_LINEAGE_DEMO.DEMO.SOURCE_TABLE_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}], &quot;job&quot;: {&quot;facets&quot;: {}, &quot;name&quot;: null, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}, &quot;outputs&quot;: [], &quot;producer&quot;: &quot;me&quot;, &quot;run&quot;: {&quot;facets&quot;: {}, &quot;runId&quot;: &quot;dae0d60a-6010-4c37-980e-c5270f5a6be4&quot;}}" classname="marquez.OpenLineageIntegrationTest" time="0.031"/>
+  <testcase name="[4] eventBody={&quot;eventTime&quot;: &quot;2021-11-03T10:53:52.427343&quot;, &quot;eventType&quot;: &quot;COMPLETE&quot;, &quot;inputs&quot;: [{&quot;facets&quot;: {}, &quot;name&quot;: &quot;OPEN_LINEAGE_DEMO.DEMO.SOURCE_TABLE_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}], &quot;job&quot;: {&quot;facets&quot;: {}, &quot;name&quot;: &quot;testing_name_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}, &quot;outputs&quot;: [], &quot;producer&quot;: &quot;me&quot;, &quot;run&quot;: {&quot;facets&quot;: {}, &quot;runId&quot;: null}}" classname="marquez.OpenLineageIntegrationTest" time="0.032"/>
+  <testcase name="[5] eventBody={&quot;eventTime&quot;: &quot;2021-11-03T10:53:52.427343&quot;, &quot;eventType&quot;: &quot;COMPLETE&quot;, &quot;inputs&quot;: [{&quot;facets&quot;: {}, &quot;name&quot;: &quot;OPEN_LINEAGE_DEMO.DEMO.SOURCE_TABLE_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}], &quot;job&quot;: {&quot;facets&quot;: {}, &quot;name&quot;: &quot;testing_name_1&quot;, &quot;namespace&quot;: &quot;testing_namespace_1&quot;}, &quot;outputs&quot;: [], &quot;producer&quot;: &quot;me&quot;, &quot;run&quot;: {&quot;facets&quot;: { &quot;parent&quot;: { &quot;_producer&quot;: &quot;me&quot;, &quot;_schemaURL&quot;: &quot;https://me&quot;, &quot;run&quot;: {}, &quot;job&quot;: { &quot;namespace&quot;: &quot;my-scheduler-namespace&quot;, &quot;name&quot;: &quot;myjob.mytask&quot;} }},&quot;runId&quot;: &quot;dae0d60a-6010-4c37-980e-c5270f5a6be4…" classname="marquez.OpenLineageIntegrationTest" time="0.03"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowAddParentForExistingJob()" classname="marquez.OpenLineageIntegrationTest" time="0.151"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegrationWithParentRunFacet()" classname="marquez.OpenLineageIntegrationTest" time="0.137"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegrationConflictingRunUuid()" classname="marquez.OpenLineageIntegrationTest" time="0.144"/>
+  <testcase name="testSendAndDeleteParentRunRelationshipFacet()" classname="marquez.OpenLineageIntegrationTest" time="0.09"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegrationWithParentOnStartEventOnly()" classname="marquez.OpenLineageIntegrationTest" time="0.142"/>
+  <testcase name="testFindEventIsSortedByTime()" classname="marquez.OpenLineageIntegrationTest" time="0.119"/>
+  <testcase name="testSendJobEvent()" classname="marquez.OpenLineageIntegrationTest" time="0.162"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegrationWithParentAndParentRunFacet()" classname="marquez.OpenLineageIntegrationTest" time="0.133"/>
+  <testcase name="testGetLineageForNonExistentDataset()" classname="marquez.OpenLineageIntegrationTest" time="0.035"/>
+  <testcase name="testOpenLineageJobHierarchyOldAirflowIntegration()" classname="marquez.OpenLineageIntegrationTest" time="0.129"/>
+  <testcase name="testFindEventBeforeAfterTime()" classname="marquez.OpenLineageIntegrationTest" time="0.086"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegrationWithTaskGroup()" classname="marquez.OpenLineageIntegrationTest" time="0.116"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowMissingParentForExistingJob()" classname="marquez.OpenLineageIntegrationTest" time="0.138"/>
+  <testcase name="testFindEventIsSortedByTimeAsc()" classname="marquez.OpenLineageIntegrationTest" time="0.084"/>
+  <testcase name="[1] pathToOpenLineageEvent=open_lineage/event_full.json" classname="marquez.OpenLineageIntegrationTest" time="0.182"/>
+  <testcase name="[2] pathToOpenLineageEvent=open_lineage/event_simple.json" classname="marquez.OpenLineageIntegrationTest" time="0.134"/>
+  <testcase name="[3] pathToOpenLineageEvent=open_lineage/event_without_schema_url.json" classname="marquez.OpenLineageIntegrationTest" time="0.121"/>
+  <testcase name="[4] pathToOpenLineageEvent=open_lineage/event_required_only.json" classname="marquez.OpenLineageIntegrationTest" time="0.049"/>
+  <testcase name="[5] pathToOpenLineageEvent=open_lineage/event_unicode.json" classname="marquez.OpenLineageIntegrationTest" time="0.139"/>
+  <testcase name="[6] pathToOpenLineageEvent=open_lineage/null_nominal_end_time.json" classname="marquez.OpenLineageIntegrationTest" time="0.095"/>
+  <testcase name="[7] pathToOpenLineageEvent=open_lineage/event_namespace_naming.json" classname="marquez.OpenLineageIntegrationTest" time="0.139"/>
+  <testcase name="testOpenLineageJobHierarchySparkAndAirflow()" classname="marquez.OpenLineageIntegrationTest" time="0.118"/>
+  <testcase name="testSendDatasetEvent()" classname="marquez.OpenLineageIntegrationTest" time="0.065"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegration()" classname="marquez.OpenLineageIntegrationTest" time="0.108"/>
+  <testcase name="testOpenLineageJobHierarchyAirflowIntegrationWithDagNameWithDot()" classname="marquez.OpenLineageIntegrationTest" time="0.126"/>
+  <testcase name="testSendOpenLineageBadArgument()" classname="marquez.OpenLineageIntegrationTest" time="0.038"/>
+  <testcase name="testSendEventAndGetItBack()" classname="marquez.OpenLineageIntegrationTest" time="0.062"/>
+  <system-out><![CDATA[INFO  [2024-02-09 04:42:39,993] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-02-09 04:42:39,993] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-02-09 04:42:39,993] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: graphql-playground for path /graphql-playground/*
+INFO  [2024-02-09 04:42:39,993] marquez.MarquezApp: Running startup actions...
+INFO  [2024-02-09 04:42:39,993] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 04:42:39,993] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 04:42:39,993] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 04:42:40,110] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 04:42:40,126] marquez.db.DbMigration: No pending migrations found, skipping...
+INFO  [2024-02-09 04:42:40,156] io.dropwizard.server.ServerFactory: Starting MarquezApp
+    __  ___
+   /  |/  /___ __________ ___  _____  ____
+  / /|_/ / __ `/ ___/ __ `/ / / / _ \/_  /
+ / /  / / /_/ / /  / /_/ / /_/ /  __/ / /_
+/_/  /_/\__,_/_/   \__, /\__,_/\___/ /___/
+                     /_/
+INFO  [2024-02-09 04:42:40,158] org.eclipse.jetty.setuid.SetUIDListener: Opened application@623f56c5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:40,158] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@3aa348c2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:40,158] org.eclipse.jetty.server.Server: jetty-9.4.53.v20231009; built: 2023-10-09T12:29:09.265Z; git: 27bde00a0b95a1d5bbee0eae7984f891d2d0f8c9; jvm 20.0.1
+
+INFO  [2024-02-09 04:42:40,205] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/namespaces (marquez.api.NamespaceResource)
+    DELETE  /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    PUT     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace}/datasets (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    PUT     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions/{version} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+    GET     /api/v1/search (marquez.api.SearchResource)
+    GET     /api/v1/sources (marquez.api.SourceResource)
+    GET     /api/v1/sources/{source} (marquez.api.SourceResource)
+    PUT     /api/v1/sources/{source} (marquez.api.SourceResource)
+    GET     /api/v1/tags (marquez.api.TagResource)
+    PUT     /api/v1/tags/{name} (marquez.api.TagResource)
+
+INFO  [2024-02-09 04:42:40,206] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@5f2bbf7f{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:40,206] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-02-09 04:42:40,206] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1473355c{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:40,206] org.eclipse.jetty.server.AbstractConnector: Started application@623f56c5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:40,207] org.eclipse.jetty.server.AbstractConnector: Started admin@3aa348c2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:40,207] org.eclipse.jetty.server.Server: Started @105812ms
+ERROR [2024-02-09 04:42:40,338] marquez.api.exceptions.JsonProcessingExceptionMapper: Failed to process JSON
+! java.time.format.DateTimeParseException: Text '2021-11-03' could not be parsed at index 10
+! at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2106)
+! at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1934)
+! at com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer._fromString(InstantDeserializer.java:301)
+! ... 82 common frames omitted
+! Causing: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.ZonedDateTime` from String "2021-11-03": Failed to deserialize java.time.ZonedDateTime: (java.time.format.DateTimeParseException) Text '2021-11-03' could not be parsed at index 10
+!  at [Source: (org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$UnCloseableInputStream); line: 1, column: 216] (through reference chain: marquez.service.models.LineageEvent["eventTime"])
+! at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+! at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1991)
+! at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1219)
+! at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DeserializerBase._handleDateTimeException(JSR310DeserializerBase.java:176)
+! at com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer._fromString(InstantDeserializer.java:307)
+! at com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer.deserialize(InstantDeserializer.java:217)
+! at com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer.deserialize(InstantDeserializer.java:51)
+! at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+! at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:314)
+! at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:215)
+! at com.fasterxml.jackson.module.blackbird.deser.SuperSonicBeanDeserializer.deserialize(SuperSonicBeanDeserializer.java:120)
+! at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer._deserializeTypedUsingDefaultImpl(AsPropertyTypeDeserializer.java:199)
+! at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer.deserializeTypedFromObject(AsPropertyTypeDeserializer.java:119)
+! at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeWithType(BeanDeserializerBase.java:1292)
+! at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:74)
+! at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+! at com.fasterxml.jackson.databind.ObjectReader._bind(ObjectReader.java:2025)
+! at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1175)
+! at com.fasterxml.jackson.jaxrs.base.ProviderBase.readFrom(ProviderBase.java:803)
+! at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.invokeReadFrom(ReaderInterceptorExecutor.java:233)
+! at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor$TerminalReaderInterceptor.aroundReadFrom(ReaderInterceptorExecutor.java:212)
+! at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:132)
+! at org.glassfish.jersey.server.internal.MappableExceptionWrapperInterceptor.aroundReadFrom(MappableExceptionWrapperInterceptor.java:49)
+! at org.glassfish.jersey.message.internal.ReaderInterceptorExecutor.proceed(ReaderInterceptorExecutor.java:132)
+! at org.glassfish.jersey.message.internal.MessageBodyFactory.readFrom(MessageBodyFactory.java:1072)
+! at org.glassfish.jersey.message.internal.InboundMessageContext.readEntity(InboundMessageContext.java:919)
+! at org.glassfish.jersey.server.ContainerRequest.readEntity(ContainerRequest.java:290)
+! at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:73)
+! at org.glassfish.jersey.server.internal.inject.EntityParamValueParamProvider$EntityValueSupplier.apply(EntityParamValueParamProvider.java:56)
+! at org.glassfish.jersey.server.spi.internal.ParamValueFactoryWithSource.apply(ParamValueFactoryWithSource.java:50)
+! at org.glassfish.jersey.server.spi.internal.ParameterValueHelper.getParameterValues(ParameterValueHelper.java:68)
+! at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$AbstractMethodParamInvoker.getParamValues(JavaResourceMethodDispatcherProvider.java:109)
+! at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:159)
+! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:93)
+! at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:478)
+! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:400)
+! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:81)
+! at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:256)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:248)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:244)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:292)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:274)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:244)
+! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:265)
+! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:235)
+! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:684)
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:394)
+! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:346)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:358)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:311)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:205)
+! at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+! at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1656)
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:35)
+! at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:193)
+! at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1626)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:47)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:41)
+! at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:193)
+! at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1626)
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:552)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:505)
+! at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:318)
+! at io.dropwizard.jetty.RoutingHandler.handle(RoutingHandler.java:52)
+! at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:722)
+! at io.dropwizard.jetty.ZipExceptionHandlingGzipHandler.handle(ZipExceptionHandlingGzipHandler.java:26)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:54)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:181)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+! at org.eclipse.jetty.server.Server.handle(Server.java:516)
+! at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487)
+! at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+! at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+! at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+! at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+! at java.base/java.lang.Thread.run(Thread.java:1623)
+ERROR [2024-02-09 04:42:40,338] marquez.logging.LoggingMdcFilter: status: 500
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 500 454 "-" "Java-http-client/20.0.1" 24
+INFO  [2024-02-09 04:42:40,478] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 59
+INFO  [2024-02-09 04:42:40,490] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=dc6409d6-cd8b-4808-bd21-b71bae784985, type=BATCH, createdAt=2024-02-09T04:42:40.394685Z, updatedAt=2024-02-09T04:42:40.394685Z, namespaceUuid=291d822a-ff37-4942-a891-b5e269ed456c, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:40,495] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=d1553096-49cb-4574-99cd-55c1ca7fc7d3, createdAt=2024-02-09T04:42:40.394685Z, updatedAt=2024-02-09T04:42:40.394685Z, jobUuid=dc6409d6-cd8b-4808-bd21-b71bae784985, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=35a8b0e6-d7e4-4534-9259-81a298d3765a, nominalStartTime=Optional[2024-02-09T04:00:00.391660Z], nominalEndTime=Optional[2024-02-09T05:00:00.391660Z], currentRunState=Optional[RUNNING], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:40,526] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 48
+INFO  [2024-02-09 04:42:40,559] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 734 "-" "marquez-java/0.45.0-SNAPSHOT" 35
+INFO  [2024-02-09 04:42:40,575] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 349 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:40,591] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1/runs?limit=100&offset=0 HTTP/1.1" 200 533 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+WARN  [2024-02-09 04:42:40,657] marquez.logging.LoggingMdcFilter: status: 422
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 422 46 "-" "Java-http-client/20.0.1" 30
+WARN  [2024-02-09 04:42:40,694] marquez.logging.LoggingMdcFilter: status: 422
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 422 71 "-" "Java-http-client/20.0.1" 4
+WARN  [2024-02-09 04:42:40,727] marquez.logging.LoggingMdcFilter: status: 422
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 422 40 "-" "Java-http-client/20.0.1" 2
+WARN  [2024-02-09 04:42:40,759] marquez.logging.LoggingMdcFilter: status: 422
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 422 41 "-" "Java-http-client/20.0.1" 1
+WARN  [2024-02-09 04:42:40,791] marquez.logging.LoggingMdcFilter: status: 422
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 422 59 "-" "Java-http-client/20.0.1" 2
+INFO  [2024-02-09 04:42:40,861] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 28
+INFO  [2024-02-09 04:42:40,869] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=0faec0ba-b9d3-4150-aaf3-8803b4282849, type=BATCH, createdAt=2024-02-09T04:42:40.821372Z, updatedAt=2024-02-09T04:42:40.821372Z, namespaceUuid=7e3b6741-277c-43d2-9210-7fe177504031, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:40,872] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=9071cdee-4520-42f4-8283-b9dec9181368, createdAt=2024-02-09T04:42:40.821372Z, updatedAt=2024-02-09T04:42:40.821372Z, jobUuid=0faec0ba-b9d3-4150-aaf3-8803b4282849, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=b18d7125-d266-4235-98af-0b0dd75f7058, nominalStartTime=Optional[2024-02-09T05:00:00.819391Z], nominalEndTime=Optional[2024-02-09T06:00:00.819391Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:40,898] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 36
+INFO  [2024-02-09 04:42:40,908] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 748 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:40,918] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 354 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:40,932] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:40 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1/runs?limit=100&offset=0 HTTP/1.1" 200 616 "-" "marquez-java/0.45.0-SNAPSHOT" 14
+INFO  [2024-02-09 04:42:40,991] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=594e61cb-a60a-43d8-a69f-6d7d9f587100, type=BATCH, createdAt=2024-02-09T04:42:40.970780Z, updatedAt=2024-02-09T04:42:40.970780Z, namespaceUuid=d835f1de-2afc-4ad7-80c1-94fd25b5a586, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:40,994] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=93ad6a5a-dacf-4e7d-a8e7-0d7b01172967, createdAt=2024-02-09T04:42:40.970780Z, updatedAt=2024-02-09T04:42:40.970780Z, jobUuid=594e61cb-a60a-43d8-a69f-6d7d9f587100, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=1d11b2da-2dea-4bab-9e2f-c50696d85019, nominalStartTime=Optional[2024-02-09T04:00:00.970620Z], nominalEndTime=Optional[2024-02-09T05:00:00.970620Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:41,019] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 35
+INFO  [2024-02-09 04:42:41,050] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 28
+INFO  [2024-02-09 04:42:41,059] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 733 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:41,067] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 350 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:41,077] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag/runs?limit=100&offset=0 HTTP/1.1" 200 235 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:41,115] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=d8642656-e4f3-4a71-a694-4e13fbc2de47, type=BATCH, createdAt=2024-02-09T04:42:41.108234Z, updatedAt=2024-02-09T04:42:41.108234Z, namespaceUuid=ceaed20b-4dcc-4c67-851a-2941ed81765d, namespaceName=s3://test_namespace1526997799, name=reused_dag_name, simpleName=reused_dag_name, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:41,117] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=4a4842f5-8cef-42e3-91f7-cf988683c46b, createdAt=2024-02-09T04:42:41.108234Z, updatedAt=2024-02-09T04:42:41.108234Z, jobUuid=d8642656-e4f3-4a71-a694-4e13fbc2de47, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=7a22c1fe-ef69-4b15-a3f0-b06808292d9e, nominalStartTime=Optional[2024-02-09T04:00:00.108090Z], nominalEndTime=Optional[2024-02-09T05:00:00.108090Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=reused_dag_name, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:41,139] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 30
+WARN  [2024-02-09 04:42:41,145] marquez.db.OpenLineageDao: Parent Run id 4a4842f5-8cef-42e3-91f7-cf988683c46b has a different job name 's3://test_namespace1526997799.reused_dag_name' from facet 'another_namespace.reused_dag_name'. Assuming Run UUID conflict and generating a new UUID 90adeec2-24ae-33de-9b92-56d85206f481
+INFO  [2024-02-09 04:42:41,146] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=7c35a694-1282-49f5-ac92-45a31b8e3acf, type=BATCH, createdAt=2024-02-09T04:42:41.108292Z, updatedAt=2024-02-09T04:42:41.108292Z, namespaceUuid=b85bb225-b699-4fb0-ba7e-97fd0a03f3c7, namespaceName=another_namespace, name=reused_dag_name, simpleName=reused_dag_name, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:41,149] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=90adeec2-24ae-33de-9b92-56d85206f481, createdAt=2024-02-09T04:42:41.108292Z, updatedAt=2024-02-09T04:42:41.108292Z, jobUuid=7c35a694-1282-49f5-ac92-45a31b8e3acf, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=7a22c1fe-ef69-4b15-a3f0-b06808292d9e, nominalStartTime=Optional[2024-02-09T04:00:00.108090Z], nominalEndTime=Optional[2024-02-09T05:00:00.108090Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=reused_dag_name, namespaceName=another_namespace)
+INFO  [2024-02-09 04:42:41,178] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 38
+INFO  [2024-02-09 04:42:41,189] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/reused_dag_name.task1 HTTP/1.1" 200 736 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:41,210] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/another_namespace/jobs/reused_dag_name HTTP/1.1" 200 343 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+INFO  [2024-02-09 04:42:41,221] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/another_namespace/jobs/reused_dag_name/runs?limit=100&offset=0 HTTP/1.1" 200 235 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:41,260] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=f8b41fa3-5431-4f21-a6a2-2235bd75d2d7, type=BATCH, createdAt=2021-01-01T00:00:00Z, updatedAt=2021-01-01T00:00:00Z, namespaceUuid=69ffd271-6e4f-430b-b341-8a4a1a66886f, namespaceName=s3://test_namespace1526997799, name=parent, simpleName=parent, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:41,262] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=bc1a36ce-c39f-4010-b067-a4337a542921, createdAt=2021-01-01T00:00:00Z, updatedAt=2021-01-01T00:00:00Z, jobUuid=f8b41fa3-5431-4f21-a6a2-2235bd75d2d7, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=cfa9dd8a-c031-47f1-bd75-b3a72ca9ceb0, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=parent, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:41,281] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 27
+INFO  [2024-02-09 04:42:41,294] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs?limit=100&offset=0 HTTP/1.1" 200 547 "-" "marquez-java/0.45.0-SNAPSHOT" 14
+INFO  [2024-02-09 04:42:41,305] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "DELETE /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/parent.test_job391788185 HTTP/1.1" 200 464 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:41,313] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs?limit=100&offset=0 HTTP/1.1" 200 342 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:41,364] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=c47d04aa-f049-407c-809c-e5a612e495fc, type=BATCH, createdAt=2024-02-09T04:42:41.343943Z, updatedAt=2024-02-09T04:42:41.343943Z, namespaceUuid=02ab14a6-14f0-44a6-bba3-f6bfe9eebd58, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:41,367] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=da6b0932-c4eb-48f2-ab00-4d14f5227ba7, createdAt=2024-02-09T04:42:41.343943Z, updatedAt=2024-02-09T04:42:41.343943Z, jobUuid=c47d04aa-f049-407c-809c-e5a612e495fc, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=2693b8e0-b9ba-4b2a-a192-d7f953058c44, nominalStartTime=Optional[2024-02-09T04:00:00.343781Z], nominalEndTime=Optional[2024-02-09T05:00:00.343781Z], currentRunState=Optional[RUNNING], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:41,383] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 26
+INFO  [2024-02-09 04:42:41,412] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 28
+INFO  [2024-02-09 04:42:41,419] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 733 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:41,427] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 349 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:41,437] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag/runs?limit=100&offset=0 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:41,512] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 25
+INFO  [2024-02-09 04:42:41,547] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 34
+INFO  [2024-02-09 04:42:41,566] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/events/lineage?sortDirection=desc&limit=100 HTTP/1.1" 200 372 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+INFO  [2024-02-09 04:42:41,647] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 42
+INFO  [2024-02-09 04:42:41,656] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob HTTP/1.1" 200 273 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:41,657] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-1)], outputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.output-1)], location=Optional.empty, description=Optional.empty, runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob), name=myjob, simpleName=myjob, parentJobName=null, createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, namespace=my-scheduler-namespace, latestRun=Optional.empty, facets={}, currentVersion=Optional[6cf7b19b-6816-4446-999c-4db0f33a416e])
+INFO  [2024-02-09 04:42:41,672] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1 HTTP/1.1" 200 266 "-" "marquez-java/0.45.0-SNAPSHOT" 15
+INFO  [2024-02-09 04:42:41,680] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1 HTTP/1.1" 200 266 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:41,699] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob/versions?limit=1&offset=0 HTTP/1.1" 200 225 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+INFO  [2024-02-09 04:42:41,729] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob/versions/37e7d6d8-997b-3e86-a24b-0df148044ff7 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:41,734] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/events/lineage?sortDirection=desc&limit=100 HTTP/1.1" 200 28 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:41,774] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=fc319695-39d3-43ab-8799-ceff0e116b03, type=BATCH, createdAt=2024-02-09T04:42:41.767053Z, updatedAt=2024-02-09T04:42:41.767053Z, namespaceUuid=b85ba82e-7643-4c00-a1f2-f07448af611c, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:41,777] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=507c4c1b-3dba-4e40-95c1-3a33db030420, createdAt=2024-02-09T04:42:41.767053Z, updatedAt=2024-02-09T04:42:41.767053Z, jobUuid=fc319695-39d3-43ab-8799-ceff0e116b03, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=1c69fd68-9780-4c9f-a60f-4eb123b934ce, nominalStartTime=Optional[2024-02-09T04:00:00.766862Z], nominalEndTime=Optional[2024-02-09T05:00:00.766862Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:41,800] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 32
+INFO  [2024-02-09 04:42:41,835] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 34
+INFO  [2024-02-09 04:42:41,847] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 735 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+INFO  [2024-02-09 04:42:41,857] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 351 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:41,868] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag/runs?limit=100&offset=0 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+WARN  [2024-02-09 04:42:41,904] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "GET /api/v1/lineage?nodeId=dataset:Imadethisup:andthistoo HTTP/1.1" 404 56 "-" "Java-http-client/20.0.1" 3
+INFO  [2024-02-09 04:42:41,942] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=8b6c2700-7aec-44b9-9b14-379135ae8323, type=BATCH, createdAt=2024-02-09T04:42:41.935081Z, updatedAt=2024-02-09T04:42:41.935081Z, namespaceUuid=97cca69b-6ec7-42ae-a757-d3941bb59ba4, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:41,944] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=941680d5-e507-32ae-8953-850a66780009, createdAt=2024-02-09T04:42:41.935081Z, updatedAt=2024-02-09T04:42:41.935081Z, jobUuid=8b6c2700-7aec-44b9-9b14-379135ae8323, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=63325963-7b64-4d3b-8067-84c15b1a2a66, nominalStartTime=Optional[2024-02-09T04:00:00.934900Z], nominalEndTime=Optional[2024-02-09T05:00:00.934900Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:41,968] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 32
+INFO  [2024-02-09 04:42:41,996] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:41 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 27
+INFO  [2024-02-09 04:42:42,005] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 731 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:42,014] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 352 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:42,024] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag/runs?limit=100&offset=0 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:42,034] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1/runs?limit=100&offset=0 HTTP/1.1" 200 532 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:42,086] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 20
+INFO  [2024-02-09 04:42:42,114] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 28
+INFO  [2024-02-09 04:42:42,120] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/events/lineage?sortDirection=asc&before=2022-01-01T00%3A00Z&limit=10&after=2021-01-01T00%3A00Z HTTP/1.1" 200 343 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:42,161] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=3d6bd12f-d256-4dba-9879-42728fab98ea, type=BATCH, createdAt=2024-02-09T04:42:42.152006Z, updatedAt=2024-02-09T04:42:42.152006Z, namespaceUuid=59264d87-8d40-4c1a-a8b8-21b6bb438a31, namespaceName=s3://test_namespace1526997799, name=dag_with_task_group, simpleName=dag_with_task_group, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:42,164] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=a82132bf-57e8-4abb-95a2-a70838f1cbc3, createdAt=2024-02-09T04:42:42.152006Z, updatedAt=2024-02-09T04:42:42.152006Z, jobUuid=3d6bd12f-d256-4dba-9879-42728fab98ea, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=7337467d-33d0-4717-b458-a4dfccb9a521, nominalStartTime=Optional[2024-02-09T04:00:00.151852Z], nominalEndTime=Optional[2024-02-09T05:00:00.151852Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=dag_with_task_group, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:42,185] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 32
+INFO  [2024-02-09 04:42:42,210] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 24
+INFO  [2024-02-09 04:42:42,219] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/dag_with_task_group.task_group.task1 HTTP/1.1" 200 745 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:42,227] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/dag_with_task_group HTTP/1.1" 200 362 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:42,238] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/dag_with_task_group/runs?limit=100&offset=0 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:42,288] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=1c49038f-37a8-4e24-a9c8-a875bcd9a213, type=BATCH, createdAt=2024-02-09T04:42:42.269253Z, updatedAt=2024-02-09T04:42:42.269253Z, namespaceUuid=9b5a954a-251c-42ed-8dbd-a1aada9c9953, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:42,291] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=ffa541b6-3d40-4ff1-9af4-044b494f6cdf, createdAt=2024-02-09T04:42:42.269253Z, updatedAt=2024-02-09T04:42:42.269253Z, jobUuid=1c49038f-37a8-4e24-a9c8-a875bcd9a213, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=1b04ea3e-ead7-42df-8fab-db44afa0d402, nominalStartTime=Optional[2024-02-09T04:00:00.269105Z], nominalEndTime=Optional[2024-02-09T05:00:00.269105Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:42,314] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 31
+INFO  [2024-02-09 04:42:42,339] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 24
+INFO  [2024-02-09 04:42:42,345] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 677 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,352] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 349 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:42,366] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1/runs?limit=100&offset=0 HTTP/1.1" 200 640 "-" "marquez-java/0.45.0-SNAPSHOT" 14
+INFO  [2024-02-09 04:42:42,429] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 21
+INFO  [2024-02-09 04:42:42,457] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 26
+INFO  [2024-02-09 04:42:42,461] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/events/lineage?sortDirection=asc&limit=10 HTTP/1.1" 200 371 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:42,504] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=065616e5-0723-4076-83c2-327a38afda2a, type=STREAM, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, namespaceUuid=366c13b1-ae9f-45c5-a4ed-bf4f7b10aad3, namespaceName=my-scheduler-namespace, name=myjob, simpleName=myjob, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=http://example.com, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:42,507] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=3f5e83fa-3480-44ff-99c5-ff943904e5e8, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, jobUuid=065616e5-0723-4076-83c2-327a38afda2a, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=3bf96371-3ff8-4275-8e72-6c9150b2d35d, nominalStartTime=Optional[2020-12-17T03:00:00.001Z], nominalEndTime=Optional[2020-12-17T04:00:00.001Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=myjob, namespaceName=my-scheduler-namespace)
+INFO  [2024-02-09 04:42:42,577] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 82
+INFO  [2024-02-09 04:42:42,589] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.table HTTP/1.1" 200 506 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+INFO  [2024-02-09 04:42:42,604] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.table/versions?limit=100&offset=0 HTTP/1.1" 200 974 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:42,614] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.table HTTP/1.1" 200 506 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:42,625] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.table/versions?limit=100&offset=0 HTTP/1.1" 200 974 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:42,633] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob.mytask HTTP/1.1" 200 1060 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:42,635] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=STREAM, inputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.table)], outputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.table)], location=Optional[http://example.com], description=Optional[string], runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob.mytask), name=myjob.mytask, simpleName=mytask, parentJobName=myjob, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, namespace=my-scheduler-namespace, latestRun=Optional[Run(super=RunMeta(id=ea041791-68bc-4ae1-bd89-4c8106a157e4, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={nominal_start_time=2020-12-17T03:00:00.001Z[UTC], nominal_end_time=2020-12-17T04:00:00.001Z[UTC], run_id=3f5e83fa-3480-44ff-99c5-ff943904e5e8, name=myjob.mytask, namespace=my-scheduler-namespace}), createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, state=COMPLETED, startedAt=Optional.empty, durationMs=Optional.empty, endedAt=Optional[2020-12-28T19:51:01.641Z], facets={nominalTime={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, nominalEndTime=2020-12-17T04:00:00.001Z, nominalStartTime=2020-12-17T03:00:00.001Z}, parent={job={name=myjob.mytask, namespace=my-scheduler-namespace}, run={runId=3f5e83fa-3480-44ff-99c5-ff943904e5e8}, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet}, additionalProp1={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp2={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp3={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}}, inputDatasetVersions=[InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.table, version=44f2640f-35fa-35c4-8901-d65ab4c29edf), facets={dataQualityAssertions={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://openlineage.io/spec/1-0-1/OpenLineage.json#/definitions/DataQualityAssertionsDatasetFacet, assertions=[{success=true, assertion=row_count_equal_to}, {column=id, success=true, assertion=no_null_values}]}, dataQualityMetrics={bytes=1048576, rowCount=1000, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://openlineage.io/spec/1-0-1/OpenLineage.json#/definitions/DataQualityMetricsInputDatasetFacet}})], outputDatasetVersions=[OutputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.table, version=44f2640f-35fa-35c4-8901-d65ab4c29edf), facets={outputStatistics={size=2097152, rowCount=2000, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://openlineage.io/spec/1-0-1/OpenLineage.json#/definitions/OutputStatisticsOutputDatasetFacet}})])], facets={documentation={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, description=string}, sourceCodeLocation={url=http://example.com, type=git, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet}, sql={query=SELECT * FROM foo, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalPropExample={example=true}}, jobType={jobType=QUERY, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, integration=FLINK, processingType=STREAMING}, additionalProp1={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp2={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp3={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}}, currentVersion=Optional[cdf41592-97a6-4aca-8375-c0a4c5445b15])
+INFO  [2024-02-09 04:42:42,644] marquez.logging.LoggingMdcFilter: status: 200
+WARN  [2024-02-09 04:42:42,645] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getRun in marquez.api.RunResource contains empty path annotation.
+
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/jobs/runs/ea041791-68bc-4ae1-bd89-4c8106a157e4 HTTP/1.1" 200 765 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:42,722] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 46
+INFO  [2024-02-09 04:42:42,730] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1 HTTP/1.1" 200 283 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:42,738] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-2 HTTP/1.1" 200 282 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,743] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1/versions?limit=100&offset=0 HTTP/1.1" 200 257 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:42,749] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-2/versions?limit=100&offset=0 HTTP/1.1" 200 257 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:42,756] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1 HTTP/1.1" 200 304 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:42,768] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1/versions?limit=100&offset=0 HTTP/1.1" 200 510 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+INFO  [2024-02-09 04:42:42,775] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob HTTP/1.1" 200 536 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,776] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-2), DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-1)], outputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.output-1)], location=Optional.empty, description=Optional.empty, runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob), name=myjob, simpleName=myjob, parentJobName=null, createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, namespace=my-scheduler-namespace, latestRun=Optional[Run(super=RunMeta(id=41fb5137-f0fd-4ee5-ba5c-56f8571d1bd7, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={}), createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, state=COMPLETED, startedAt=Optional.empty, durationMs=Optional.empty, endedAt=Optional[2020-12-28T09:52:00.001Z], facets={}, inputDatasetVersions=[InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.input-1, version=48789ae4-2757-3a48-87bf-be6b4622e05e), facets={}), InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.input-2, version=9a7493d2-9b80-305f-90d3-a6d964d39016), facets={})], outputDatasetVersions=[OutputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.output-1, version=3de9d190-20be-3152-a257-ea6e40a3f5c8), facets={})])], facets={}, currentVersion=Optional[92379e7d-fccf-4598-8ab4-aa101178c82f])
+INFO  [2024-02-09 04:42:42,780] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/jobs/runs/41fb5137-f0fd-4ee5-ba5c-56f8571d1bd7 HTTP/1.1" 200 397 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:42,853] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 41
+INFO  [2024-02-09 04:42:42,860] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1 HTTP/1.1" 200 284 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,866] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-2 HTTP/1.1" 200 283 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,871] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1/versions?limit=100&offset=0 HTTP/1.1" 200 257 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:42,877] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-2/versions?limit=100&offset=0 HTTP/1.1" 200 257 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:42,883] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1 HTTP/1.1" 200 304 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,890] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1/versions?limit=100&offset=0 HTTP/1.1" 200 510 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,896] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob HTTP/1.1" 200 536 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,897] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-2), DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-1)], outputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.output-1)], location=Optional.empty, description=Optional.empty, runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob), name=myjob, simpleName=myjob, parentJobName=null, createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, namespace=my-scheduler-namespace, latestRun=Optional[Run(super=RunMeta(id=41fb5137-f0fd-4ee5-ba5c-56f8571d1bd7, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={}), createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, state=COMPLETED, startedAt=Optional.empty, durationMs=Optional.empty, endedAt=Optional[2020-12-28T09:52:00.001Z], facets={}, inputDatasetVersions=[InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.input-1, version=48789ae4-2757-3a48-87bf-be6b4622e05e), facets={}), InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.input-2, version=9a7493d2-9b80-305f-90d3-a6d964d39016), facets={})], outputDatasetVersions=[OutputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.output-1, version=3de9d190-20be-3152-a257-ea6e40a3f5c8), facets={})])], facets={}, currentVersion=Optional[fd7a94b2-323b-43e7-a624-ab9a2b4608b5])
+INFO  [2024-02-09 04:42:42,901] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/jobs/runs/41fb5137-f0fd-4ee5-ba5c-56f8571d1bd7 HTTP/1.1" 200 397 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:42,942] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 9
+INFO  [2024-02-09 04:42:42,948] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/namespaces/my-namespace/jobs/myjob HTTP/1.1" 200 311 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:42,949] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[], outputs=[], location=Optional.empty, description=Optional.empty, runId=Optional.empty), id=JobId(namespace=my-namespace, name=myjob), name=myjob, simpleName=myjob, parentJobName=null, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, namespace=my-namespace, latestRun=Optional[Run(super=RunMeta(id=43d7db3b-8984-4cda-b237-8c6919b36670, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={}), createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, state=NEW, startedAt=Optional.empty, durationMs=Optional.empty, endedAt=Optional.empty, facets={}, inputDatasetVersions=[], outputDatasetVersions=[])], facets={}, currentVersion=Optional.empty)
+INFO  [2024-02-09 04:42:42,953] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:42 +0000] "GET /api/v1/jobs/runs/43d7db3b-8984-4cda-b237-8c6919b36670 HTTP/1.1" 200 206 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,042] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 59
+INFO  [2024-02-09 04:42:43,050] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1 HTTP/1.1" 200 285 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:43,056] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-2 HTTP/1.1" 200 284 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,061] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-1/versions?limit=100&offset=0 HTTP/1.1" 200 256 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,066] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.input-2/versions?limit=100&offset=0 HTTP/1.1" 200 256 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,071] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1 HTTP/1.1" 200 302 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,078] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.output-1/versions?limit=100&offset=0 HTTP/1.1" 200 529 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,085] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob.buggy_task%F0%9F%95%B7 HTTP/1.1" 200 557 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:43,086] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-2), DatasetId(namespace=my-datasource-namespace, name=instance.schema.input-1)], outputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.output-1)], location=Optional.empty, description=Optional.empty, runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob.buggy_task]]>&#x1f577;<![CDATA[), name=myjob.buggy_task]]>&#x1f577;<![CDATA[, simpleName=myjob.buggy_task]]>&#x1f577;<![CDATA[, parentJobName=null, createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, namespace=my-scheduler-namespace, latestRun=Optional[Run(super=RunMeta(id=1d8f4596-b3f2-4ebb-9e75-8ecc955b834a, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={}), createdAt=2020-12-28T09:52:00.001Z, updatedAt=2020-12-28T09:52:00.001Z, state=COMPLETED, startedAt=Optional.empty, durationMs=Optional.empty, endedAt=Optional[2020-12-28T09:52:00.001Z], facets={}, inputDatasetVersions=[InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.input-1, version=5fd1331b-cd96-3856-a8d0-ac56ecaef91a), facets={}), InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.input-2, version=2e8a8ea7-684b-372e-8791-9f9da08520bf), facets={})], outputDatasetVersions=[OutputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.output-1, version=ee6655d4-d16e-36aa-8f5e-dad7cae04deb), facets={})])], facets={}, currentVersion=Optional[c20934db-8747-402d-b75c-d2a5eb197533])
+INFO  [2024-02-09 04:42:43,090] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/jobs/runs/1d8f4596-b3f2-4ebb-9e75-8ecc955b834a HTTP/1.1" 200 420 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,153] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 29
+INFO  [2024-02-09 04:42:43,159] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.in_table_with_no_facets HTTP/1.1" 200 293 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,164] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.in_table_with_no_facets/versions?limit=100&offset=0 HTTP/1.1" 200 266 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:43,168] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.out_table_with_no_facets HTTP/1.1" 200 264 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,173] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-datasource-namespace/datasets/instance.schema.out_table_with_no_facets/versions?limit=100&offset=0 HTTP/1.1" 200 565 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,180] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob.task HTTP/1.1" 200 574 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:43,181] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.in_table_with_no_facets)], outputs=[DatasetId(namespace=my-datasource-namespace, name=instance.schema.out_table_with_no_facets)], location=Optional.empty, description=Optional.empty, runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob.task), name=myjob.task, simpleName=myjob.task, parentJobName=null, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, namespace=my-scheduler-namespace, latestRun=Optional[Run(super=RunMeta(id=1d79ed5b-7fe9-4124-b70a-bfa01d9fba83, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={nominal_start_time=2020-12-17T03:00:00.001Z[UTC]}), createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, state=RUNNING, startedAt=Optional[2020-12-28T19:51:01.641Z], durationMs=Optional.empty, endedAt=Optional.empty, facets={nominalTime={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, nominalStartTime=2020-12-17T03:00:00.001Z}}, inputDatasetVersions=[InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.in_table_with_no_facets, version=ed904363-28d0-32cc-8a8d-34dbc5e9a222), facets={})], outputDatasetVersions=[OutputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=my-datasource-namespace, name=instance.schema.out_table_with_no_facets, version=b5f8e7ae-c8a6-3a9c-b8b3-a9ac6450e042), facets={})])], facets={}, currentVersion=Optional.empty)
+INFO  [2024-02-09 04:42:43,184] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/jobs/runs/1d79ed5b-7fe9-4124-b70a-bfa01d9fba83 HTTP/1.1" 200 461 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:43,225] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=25bc38f1-0fa7-48af-acfc-bfbfeefb0442, type=BATCH, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, namespaceUuid=cc847079-11a2-4304-8440-2c668449af72, namespaceName=my-scheduler-namespace, name=myjob, simpleName=myjob, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=http://example.com, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:43,228] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=3f5e83fa-3480-44ff-99c5-ff943904e5e8, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, jobUuid=25bc38f1-0fa7-48af-acfc-bfbfeefb0442, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=8eae6e79-01a2-4284-a44c-a9ded2ccd984, nominalStartTime=Optional[2020-12-17T03:00:00.001Z], nominalEndTime=Optional[2020-12-17T04:00:00.001Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=myjob, namespaceName=my-scheduler-namespace)
+INFO  [2024-02-09 04:42:43,290] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 71
+INFO  [2024-02-09 04:42:43,296] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Fblob-source/datasets/instance.schema.table HTTP/1.1" 200 483 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,301] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Fblob-source/datasets/instance.schema.table/versions?limit=100&offset=0 HTTP/1.1" 200 460 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,308] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Fblob-sink/datasets/instance.schema.table HTTP/1.1" 200 505 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,314] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Fblob-sink/datasets/instance.schema.table/versions?limit=100&offset=0 HTTP/1.1" 200 824 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,321] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-scheduler-namespace/jobs/myjob.mytask HTTP/1.1" 200 855 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:43,322] marquez.OpenLineageIntegrationTest: Got job from server Job(super=JobMeta(type=BATCH, inputs=[DatasetId(namespace=s3://blob-source, name=instance.schema.table)], outputs=[DatasetId(namespace=s3://blob-sink, name=instance.schema.table)], location=Optional[http://example.com], description=Optional[string], runId=Optional.empty), id=JobId(namespace=my-scheduler-namespace, name=myjob.mytask), name=myjob.mytask, simpleName=mytask, parentJobName=myjob, createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, namespace=my-scheduler-namespace, latestRun=Optional[Run(super=RunMeta(id=ea041791-68bc-4ae1-bd89-4c8106a157e4, nominalStartTime=Optional.empty, nominalEndTime=Optional.empty, args={nominal_start_time=2020-12-17T03:00:00.001Z[UTC], nominal_end_time=2020-12-17T04:00:00.001Z[UTC], run_id=3f5e83fa-3480-44ff-99c5-ff943904e5e8, name=myjob.mytask, namespace=my-scheduler-namespace}), createdAt=2020-12-28T19:51:01.641Z, updatedAt=2020-12-28T19:51:01.641Z, state=COMPLETED, startedAt=Optional.empty, durationMs=Optional.empty, endedAt=Optional[2020-12-28T19:51:01.641Z], facets={nominalTime={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, nominalEndTime=2020-12-17T04:00:00.001Z, nominalStartTime=2020-12-17T03:00:00.001Z}, parent={job={name=myjob.mytask, namespace=my-scheduler-namespace}, run={runId=3f5e83fa-3480-44ff-99c5-ff943904e5e8}, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet}, additionalProp1={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp2={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp3={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}}, inputDatasetVersions=[InputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=s3://blob-source, name=instance.schema.table, version=450da569-01ae-3abb-abe7-1ede8b4d2fec), facets={})], outputDatasetVersions=[OutputDatasetVersion(datasetVersionId=DatasetVersionId(namespace=s3://blob-sink, name=instance.schema.table, version=b8bac257-ce5d-33dd-9335-a7284dc2cd21), facets={})])], facets={documentation={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, description=string}, sourceCodeLocation={url=http://example.com, type=git, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet}, sql={query=SELECT * FROM foo, _producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalPropExample={example=true}}, additionalProp1={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp2={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}, additionalProp3={_producer=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/client, _schemaURL=https://github.com/OpenLineage/OpenLineage/blob/v1-0-0/spec/OpenLineage.yml#MyCustomJobFacet, additionalProp1={}}}, currentVersion=Optional[edbc9c51-2310-4115-902d-b709a8893b35])
+INFO  [2024-02-09 04:42:43,326] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/jobs/runs/ea041791-68bc-4ae1-bd89-4c8106a157e4 HTTP/1.1" 200 605 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,364] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=17b667c9-936a-4635-a4da-5fe67388a9e1, type=BATCH, createdAt=2024-02-09T04:42:43.357940Z, updatedAt=2024-02-09T04:42:43.357940Z, namespaceUuid=b7dba1ca-c44d-4f2d-ab74-cde842b54fcd, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:43,366] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=1b8173c6-1dcf-4018-a52a-7b7bab3c961d, createdAt=2024-02-09T04:42:43.357940Z, updatedAt=2024-02-09T04:42:43.357940Z, jobUuid=17b667c9-936a-4635-a4da-5fe67388a9e1, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=79c636c4-d3ba-4bc8-807e-c558bcace0c7, nominalStartTime=Optional[2024-02-09T04:00:00.357762Z], nominalEndTime=Optional[2024-02-09T05:00:00.357762Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:43,388] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 29
+INFO  [2024-02-09 04:42:43,412] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 23
+INFO  [2024-02-09 04:42:43,419] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.startSparkJob HTTP/1.1" 200 741 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:43,426] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.startSparkJob.theSparkJob HTTP/1.1" 200 713 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:43,436] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 351 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:43,446] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag/runs?limit=100&offset=0 HTTP/1.1" 200 238 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:43,499] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 21
+INFO  [2024-02-09 04:42:43,505] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-dataset-namespace/datasets/my-dataset-name HTTP/1.1" 200 411 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:43,510] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/my-dataset-namespace/datasets/my-dataset-name/versions?limit=100&offset=0 HTTP/1.1" 200 361 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,549] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=5b149d23-b71b-46f0-ab60-295f182cbf19, type=BATCH, createdAt=2024-02-09T04:42:43.542831Z, updatedAt=2024-02-09T04:42:43.542831Z, namespaceUuid=2cd5dd8d-56db-4f1e-b373-3ca4a51de439, namespaceName=s3://test_namespace1526997799, name=the_dag, simpleName=the_dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:43,551] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=ae35617e-9265-489a-bcc6-88302510f738, createdAt=2024-02-09T04:42:43.542831Z, updatedAt=2024-02-09T04:42:43.542831Z, jobUuid=5b149d23-b71b-46f0-ab60-295f182cbf19, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=f2eeaedb-a060-4dd9-9ccd-3cf20cd2f387, nominalStartTime=Optional[2024-02-09T04:00:00.542681Z], nominalEndTime=Optional[2024-02-09T05:00:00.542681Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the_dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:43,574] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 30
+INFO  [2024-02-09 04:42:43,598] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 23
+INFO  [2024-02-09 04:42:43,605] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag.task1 HTTP/1.1" 200 732 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:43,611] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag HTTP/1.1" 200 351 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,621] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the_dag/runs?limit=100&offset=0 HTTP/1.1" 200 237 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:43,658] marquez.db.OpenLineageDao: Created new parent job record JobRow(uuid=19019e8a-1fa1-4ce2-8042-c724a1a63ae1, type=BATCH, createdAt=2024-02-09T04:42:43.652087Z, updatedAt=2024-02-09T04:42:43.652087Z, namespaceUuid=4af16b35-5a56-4b09-bc09-871526d11867, namespaceName=s3://test_namespace1526997799, name=the.dag, simpleName=the.dag, parentJobName=null, description=Optional.empty, currentVersionUuid=Optional.empty, location=null, inputs=[], symlinkTargetId=null)
+INFO  [2024-02-09 04:42:43,660] marquez.db.OpenLineageDao: Created new parent run record RunRow(uuid=d8d0ebbb-4e28-4571-a564-e16fc4da303c, createdAt=2024-02-09T04:42:43.652087Z, updatedAt=2024-02-09T04:42:43.652087Z, jobUuid=19019e8a-1fa1-4ce2-8042-c724a1a63ae1, jobVersionUuid=Optional.empty, parentRunUuid=Optional.empty, runArgsUuid=9af9b053-ed2c-42ca-b666-39317bc0d10d, nominalStartTime=Optional[2024-02-09T04:00:00.651924Z], nominalEndTime=Optional[2024-02-09T05:00:00.651924Z], currentRunState=Optional[COMPLETED], startedAt=Optional.empty, startRunStateUuid=Optional.empty, endedAt=Optional.empty, endRunStateUuid=Optional.empty, jobName=the.dag, namespaceName=s3://test_namespace1526997799)
+INFO  [2024-02-09 04:42:43,687] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 34
+INFO  [2024-02-09 04:42:43,724] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 35
+INFO  [2024-02-09 04:42:43,732] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the.dag.task1 HTTP/1.1" 200 734 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:43,739] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the.dag HTTP/1.1" 200 353 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:43,748] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1526997799/jobs/the.dag/runs?limit=100&offset=0 HTTP/1.1" 200 237 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+ERROR [2024-02-09 04:42:43,785] marquez.api.OpenLineageResource: Unexpected error while processing request
+! java.lang.IllegalArgumentException: namespace 'sqlserver://myhost:3342;user=auser;password=]]>&#x1f602;<![CDATA[]]>&#x1f602;<![CDATA[]]>&#x1f602;<![CDATA[;database=TheDatabase' must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), at (@), plus (+), dashes (-), colons (:), equals (=), semicolons (;), slashes (/) or dots (.) with a maximum length of 1024 characters.
+! at com.google.common.base.Preconditions.checkArgument(Preconditions.java:414)
+! at marquez.common.models.NamespaceName.<init>(NamespaceName.java:32)
+! at marquez.common.models.NamespaceName.of(NamespaceName.java:43)
+! at marquez.db.OpenLineageDao.toDatasetId(OpenLineageDao.java:744)
+! at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:733)
+! at org.jdbi.v3.core.internal.exceptions.Unchecked.lambda$function$4(Unchecked.java:76)
+! at org.jdbi.v3.core.extension.ExtensionHandler.lambda$createForMethodHandle$4(ExtensionHandler.java:116)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at jdk.proxy3/jdk.proxy3.$Proxy162.toDatasetId(Unknown Source)
+! at marquez.db.OpenLineageDao.lambda$buildJobFromEvent$15(OpenLineageDao.java:586)
+! at java.base/java.util.Optional.orElseGet(Optional.java:364)
+! at marquez.db.OpenLineageDao.buildJobFromEvent(OpenLineageDao.java:574)
+! at marquez.db.OpenLineageDao.updateBaseMarquezModel(OpenLineageDao.java:308)
+! at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:733)
+! at org.jdbi.v3.core.internal.exceptions.Unchecked.lambda$function$4(Unchecked.java:76)
+! at org.jdbi.v3.core.extension.ExtensionHandler.lambda$createForMethodHandle$4(ExtensionHandler.java:116)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at jdk.proxy3/jdk.proxy3.$Proxy162.updateBaseMarquezModel(Unknown Source)
+! at marquez.db.OpenLineageDao.updateMarquezModel(OpenLineageDao.java:167)
+! at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:733)
+! at org.jdbi.v3.core.internal.exceptions.Unchecked.lambda$function$4(Unchecked.java:76)
+! at org.jdbi.v3.core.extension.ExtensionHandler.lambda$createForMethodHandle$4(ExtensionHandler.java:116)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy130.updateMarquezModel(Unknown Source)
+! at marquez.service.DelegatingDaos$DelegatingOpenLineageDao.updateMarquezModel(DelegatingDaos.java:59)
+! at marquez.service.OpenLineageService.lambda$createAsync$5(OpenLineageService.java:141)
+! at marquez.logging.MdcPropagating.lambda$withMdc$0(MdcPropagating.java:25)
+! at marquez.tracing.SentryPropagating$SentryPropagatingSupplier.get(SentryPropagating.java:28)
+! at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+! ... 6 common frames omitted
+! Causing: java.util.concurrent.CompletionException: java.lang.IllegalArgumentException: namespace 'sqlserver://myhost:3342;user=auser;password=]]>&#x1f602;<![CDATA[]]>&#x1f602;<![CDATA[]]>&#x1f602;<![CDATA[;database=TheDatabase' must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), at (@), plus (+), dashes (-), colons (:), equals (=), semicolons (;), slashes (/) or dots (.) with a maximum length of 1024 characters.
+! at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+! at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+! at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1770)
+! at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+! at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+! at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+! at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+! at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+! at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+WARN  [2024-02-09 04:42:43,785] marquez.logging.LoggingMdcFilter: status: 400
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 400 382 "-" "Java-http-client/20.0.1" 8
+INFO  [2024-02-09 04:42:43,845] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "POST /api/v1/lineage HTTP/1.1" 201 0 "-" "Java-http-client/20.0.1" 27
+INFO  [2024-02-09 04:42:43,849] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:43 +0000] "GET /api/v1/events/lineage?sortDirection=desc&limit=100 HTTP/1.1" 200 352 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:43,879] org.eclipse.jetty.server.AbstractConnector: Stopped application@623f56c5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:43,879] org.eclipse.jetty.server.AbstractConnector: Stopped admin@3aa348c2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:43,879] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1473355c{/,null,STOPPED}
+INFO  [2024-02-09 04:42:43,880] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@5f2bbf7f{/,null,STOPPED}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

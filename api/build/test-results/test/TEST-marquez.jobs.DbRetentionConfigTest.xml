@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.jobs.DbRetentionConfigTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:43:53" hostname="MacBook-Air.local" time="0.003">
+  <properties/>
+  <testcase name="testNewDbRetentionConfig_withDefaultsOnly()" classname="marquez.jobs.DbRetentionConfigTest" time="0.0"/>
+  <testcase name="testNewDbRetentionConfig_negativeNumberOfRowsPerBatch()" classname="marquez.jobs.DbRetentionConfigTest" time="0.003"/>
+  <testcase name="testNewDbRetentionConfig_overrideNumberOfRowsPerBatch()" classname="marquez.jobs.DbRetentionConfigTest" time="0.0"/>
+  <testcase name="testNewDbRetentionConfig_overrideFrequencyMins()" classname="marquez.jobs.DbRetentionConfigTest" time="0.0"/>
+  <testcase name="testNewDbRetentionConfig_negativeFrequencyMins()" classname="marquez.jobs.DbRetentionConfigTest" time="0.0"/>
+  <testcase name="testNewDbRetentionConfig_overrideRetentionDays()" classname="marquez.jobs.DbRetentionConfigTest" time="0.0"/>
+  <testcase name="testNewDbRetentionConfig_negativeRetentionDays()" classname="marquez.jobs.DbRetentionConfigTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

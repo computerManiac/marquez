@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.MarquezAppIntegrationTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:37" hostname="MacBook-Air.local" time="1.525">
+  <properties/>
+  <testcase name="testApp_listTags()" classname="marquez.MarquezAppIntegrationTest" time="0.011"/>
+  <testcase name="testApp_getJobWithFQNFromParent()" classname="marquez.MarquezAppIntegrationTest" time="0.195"/>
+  <testcase name="testApp_createJobAndMarkRunAsComplete()" classname="marquez.MarquezAppIntegrationTest" time="0.336"/>
+  <testcase name="testDatasetFieldChange()" classname="marquez.MarquezAppIntegrationTest" time="0.076"/>
+  <testcase name="testApp_createDbTable()" classname="marquez.MarquezAppIntegrationTest" time="0.13"/>
+  <testcase name="testApp_getJob()" classname="marquez.MarquezAppIntegrationTest" time="0.11"/>
+  <testcase name="testApp_search()" classname="marquez.MarquezAppIntegrationTest" time="0.065"/>
+  <testcase name="[1] sourceName=test_source312" classname="marquez.MarquezAppIntegrationTest" time="0.019"/>
+  <testcase name="[2] sourceName=s3://bucket" classname="marquez.MarquezAppIntegrationTest" time="0.013"/>
+  <testcase name="[3] sourceName=asdf" classname="marquez.MarquezAppIntegrationTest" time="0.015"/>
+  <testcase name="[4] sourceName=bigquery:" classname="marquez.MarquezAppIntegrationTest" time="0.011"/>
+  <testcase name="testApp_createStream()" classname="marquez.MarquezAppIntegrationTest" time="0.111"/>
+  <testcase name="testApp_listRunOrder()" classname="marquez.MarquezAppIntegrationTest" time="0.141"/>
+  <testcase name="testDatasetCustomTag()" classname="marquez.MarquezAppIntegrationTest" time="0.036"/>
+  <testcase name="testApp_testLazyInputDataset()" classname="marquez.MarquezAppIntegrationTest" time="0.164"/>
+  <testcase name="testDatasetWithUnknownFieldType()" classname="marquez.MarquezAppIntegrationTest" time="0.033"/>
+  <testcase name="[1] namespaceName=DEFAULT" classname="marquez.MarquezAppIntegrationTest" time="0.012"/>
+  <testcase name="[2] namespaceName=database://localhost:1234" classname="marquez.MarquezAppIntegrationTest" time="0.01"/>
+  <testcase name="[3] namespaceName=s3://bucket" classname="marquez.MarquezAppIntegrationTest" time="0.01"/>
+  <testcase name="[4] namespaceName=bigquery:" classname="marquez.MarquezAppIntegrationTest" time="0.011"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:12:36,814] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:12:36,814] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:12:36,814] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:12:36,828] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 10:12:36,850] org.flywaydb.core.internal.command.DbValidate: Successfully validated 82 migrations (execution time 00:00.013s)
+INFO  [2024-02-09 10:12:36,854] org.flywaydb.core.internal.command.DbMigrate: Current version of schema "public": 67.2
+INFO  [2024-02-09 10:12:36,854] org.flywaydb.core.internal.command.DbMigrate: Schema "public" is up to date. No migration necessary.
+INFO  [2024-02-09 04:42:36,943] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-02-09 04:42:36,943] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-02-09 04:42:36,943] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: graphql-playground for path /graphql-playground/*
+INFO  [2024-02-09 04:42:36,943] marquez.MarquezApp: Running startup actions...
+INFO  [2024-02-09 04:42:36,944] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 04:42:36,944] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 04:42:36,944] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 04:42:37,055] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 04:42:37,072] marquez.db.DbMigration: No pending migrations found, skipping...
+INFO  [2024-02-09 04:42:37,105] io.dropwizard.server.ServerFactory: Starting MarquezApp
+    __  ___
+   /  |/  /___ __________ ___  _____  ____
+  / /|_/ / __ `/ ___/ __ `/ / / / _ \/_  /
+ / /  / / /_/ / /  / /_/ / /_/ /  __/ / /_
+/_/  /_/\__,_/_/   \__, /\__,_/\___/ /___/
+                     /_/
+INFO  [2024-02-09 04:42:37,107] org.eclipse.jetty.setuid.SetUIDListener: Opened application@33b2ab5f{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:37,107] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@603ac1ca{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:37,107] org.eclipse.jetty.server.Server: jetty-9.4.53.v20231009; built: 2023-10-09T12:29:09.265Z; git: 27bde00a0b95a1d5bbee0eae7984f891d2d0f8c9; jvm 20.0.1
+
+INFO  [2024-02-09 04:42:37,165] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/namespaces (marquez.api.NamespaceResource)
+    DELETE  /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    PUT     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace}/datasets (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    PUT     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions/{version} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+    GET     /api/v1/search (marquez.api.SearchResource)
+    GET     /api/v1/sources (marquez.api.SourceResource)
+    GET     /api/v1/sources/{source} (marquez.api.SourceResource)
+    PUT     /api/v1/sources/{source} (marquez.api.SourceResource)
+    GET     /api/v1/tags (marquez.api.TagResource)
+    PUT     /api/v1/tags/{name} (marquez.api.TagResource)
+
+INFO  [2024-02-09 04:42:37,166] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1e0d1477{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:37,166] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-02-09 04:42:37,166] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@38c341a1{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:37,166] org.eclipse.jetty.server.AbstractConnector: Started application@33b2ab5f{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:37,167] org.eclipse.jetty.server.AbstractConnector: Started admin@603ac1ca{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:37,167] org.eclipse.jetty.server.Server: Started @102772ms
+INFO  [2024-02-09 04:42:37,175] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/tags?limit=100&offset=0 HTTP/1.1" 200 145 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:37,192] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 13
+INFO  [2024-02-09 04:42:37,242] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job1115751407 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 52
+INFO  [2024-02-09 04:42:37,267] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job170860768 HTTP/1.1" 200 490 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:37,359] marquez.api.filter.JobRedirectFilter: Job s3://test_namespace220603737.test_job1115751407 has been redirected to s3://test_namespace220603737.test_job170860768.test_job1115751407
+INFO  [2024-02-09 04:42:37,360] marquez.logging.LoggingMdcFilter: status: 301
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job1115751407 HTTP/1.1" 301 0 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:37,371] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job170860768.test_job1115751407 HTTP/1.1" 200 286 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:37,382] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:37,387] marquez.service.SourceService: Create/upsert source 'test_source1200325053' with meta: SourceMeta(type=SourceType(value=KAFKA), connectionUrl=kafka://localhost:9092, description=Optional[test_description301427051])
+INFO  [2024-02-09 04:42:37,392] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/sources/test_source1200325053 HTTP/1.1" 200 214 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:37,403] marquez.service.DatasetService: Creating or updating dataset 'test_dataset238232223' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset238232223), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description821665686], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,424] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset238232223 HTTP/1.1" 200 551 "-" "marquez-java/0.45.0-SNAPSHOT" 32
+INFO  [2024-02-09 04:42:37,432] marquez.service.DatasetService: Creating or updating dataset 'test_dataset836194503' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset836194503), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description1988008611], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,445] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset836194503 HTTP/1.1" 200 552 "-" "marquez-java/0.45.0-SNAPSHOT" 18
+INFO  [2024-02-09 04:42:37,453] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1863956100' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1863956100), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description1210085403], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,479] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset1863956100 HTTP/1.1" 200 555 "-" "marquez-java/0.45.0-SNAPSHOT" 34
+INFO  [2024-02-09 04:42:37,485] marquez.service.DatasetService: Creating or updating dataset 'test_dataset272441049' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset272441049), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description1577992975], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,499] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset272441049 HTTP/1.1" 200 552 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:37,504] marquez.service.DatasetService: Creating or updating dataset 'test_dataset390107723' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset390107723), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description1298352199], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,517] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset390107723 HTTP/1.1" 200 552 "-" "marquez-java/0.45.0-SNAPSHOT" 17
+INFO  [2024-02-09 04:42:37,521] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1045926835' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1045926835), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description1532510140], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,536] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset1045926835 HTTP/1.1" 200 555 "-" "marquez-java/0.45.0-SNAPSHOT" 17
+INFO  [2024-02-09 04:42:37,556] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job538123698 HTTP/1.1" 200 794 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:37,580] marquez.service.RunService: Creating run for job 'test_job538123698'...
+INFO  [2024-02-09 04:42:37,603] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job538123698/runs HTTP/1.1" 201 964 "-" "marquez-java/0.45.0-SNAPSHOT" 35
+INFO  [2024-02-09 04:42:37,626] marquez.logging.LoggingMdcFilter: status: 200
+WARN  [2024-02-09 04:42:37,627] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getRun in marquez.api.RunResource contains empty path annotation.
+
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "POST /api/v1/jobs/runs/e42b9380-b09a-4d8d-a630-974be37343d0/start?at=2024-02-09T04%3A42%3A37.606357Z HTTP/1.1" 200 993 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:37,664] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job538123698 HTTP/1.1" 200 2251 "-" "marquez-java/0.45.0-SNAPSHOT" 38
+INFO  [2024-02-09 04:42:37,699] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "POST /api/v1/jobs/runs/e42b9380-b09a-4d8d-a630-974be37343d0/complete?at=2024-02-09T04%3A42%3A37.667009Z HTTP/1.1" 200 1450 "-" "marquez-java/0.45.0-SNAPSHOT" 33
+INFO  [2024-02-09 04:42:37,708] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job538123698 HTTP/1.1" 200 720 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:37,717] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:37,719] marquez.service.SourceService: Create/upsert source 'my-source' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test2007351204, description=Optional[test_description1866701496])
+INFO  [2024-02-09 04:42:37,723] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/sources/my-source HTTP/1.1" 200 228 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:37,727] marquez.service.DatasetService: Creating or updating dataset 'public.mytable' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=public.mytable), sourceName=SourceName(value=my-source), fields=[Field(name=FieldName(value=a), type=INTEGER, tags=[], description=Optional.empty), Field(name=FieldName(value=b), type=TIMESTAMP, tags=[], description=Optional.empty)], tags=[], description=Optional.empty, runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,744] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 614 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:37,759] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 330 "-" "marquez-java/0.45.0-SNAPSHOT" 13
+INFO  [2024-02-09 04:42:37,763] marquez.service.DatasetService: Creating or updating dataset 'public.mytable' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=public.mytable), sourceName=SourceName(value=my-source), fields=[Field(name=FieldName(value=a), type=INTEGER, tags=[], description=Optional.empty), Field(name=FieldName(value=b-fix), type=STRING, tags=[], description=Optional.empty)], tags=[], description=Optional.empty, runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,778] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 615 "-" "marquez-java/0.45.0-SNAPSHOT" 18
+INFO  [2024-02-09 04:42:37,785] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 334 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:37,794] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:37,796] marquez.service.SourceService: Create/upsert source 'test_source268932635' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test2007351204, description=Optional[test_description1866701496])
+INFO  [2024-02-09 04:42:37,801] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/sources/test_source268932635 HTTP/1.1" 200 239 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:37,805] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1338459275' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1338459275), sourceName=SourceName(value=test_source268932635), fields=[Field(name=FieldName(value=test_field528523983), type=VARCHAR(49), tags=[TagName(value=SENSITIVE)], description=Optional[test_description1494946236]), Field(name=FieldName(value=test_field804614170), type=VARCHAR(119), tags=[], description=Optional[test_description802752197])], tags=[TagName(value=PII)], description=Optional[test_description1964585927], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,827] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset1338459275 HTTP/1.1" 200 779 "-" "marquez-java/0.45.0-SNAPSHOT" 26
+INFO  [2024-02-09 04:42:37,848] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets?limit=100&offset=0 HTTP/1.1" 200 937 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:37,858] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset1338459275/versions?limit=100&offset=0 HTTP/1.1" 200 357 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:37,867] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1338459275' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1338459275), sourceName=SourceName(value=test_source268932635), fields=[Field(name=FieldName(value=test_field528523983), type=VARCHAR(49), tags=[TagName(value=SENSITIVE)], description=Optional[test_description1494946236]), Field(name=FieldName(value=test_field804614170), type=VARCHAR(119), tags=[], description=Optional[test_description802752197]), Field(name=FieldName(value=test_field638071405), type=VARCHAR(226), tags=[TagName(value=PII)], description=Optional[test_description1935718465]), Field(name=FieldName(value=test_field229723835), type=VARCHAR(247), tags=[], description=Optional[test_description449245372]), Field(name=FieldName(value=test_field1436491016), type=VARCHAR(89), tags=[], description=Optional[test_description1809471876])], tags=[TagName(value=PII)], description=Optional[test_description1964585927], runId=Optional.empty))
+INFO  [2024-02-09 04:42:37,898] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset1338459275 HTTP/1.1" 200 1101 "-" "marquez-java/0.45.0-SNAPSHOT" 34
+INFO  [2024-02-09 04:42:37,914] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset1338459275/versions?limit=100&offset=0 HTTP/1.1" 200 467 "-" "marquez-java/0.45.0-SNAPSHOT" 15
+INFO  [2024-02-09 04:42:37,929] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:37,940] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job713451842 HTTP/1.1" 200 490 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:37,951] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:37 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job866056610 HTTP/1.1" 200 490 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+INFO  [2024-02-09 04:42:38,018] marquez.api.filter.JobRedirectFilter: Job s3://test_namespace220603737.test_job713451842 has been redirected to s3://test_namespace220603737.test_job866056610
+INFO  [2024-02-09 04:42:38,018] marquez.logging.LoggingMdcFilter: status: 301
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job713451842 HTTP/1.1" 301 0 "-" "marquez-java/0.45.0-SNAPSHOT" 2
+INFO  [2024-02-09 04:42:38,026] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job866056610 HTTP/1.1" 200 273 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:38,034] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,036] marquez.service.SourceService: Create/upsert source 'my-source' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test2007351204, description=Optional[test_description1866701496])
+INFO  [2024-02-09 04:42:38,040] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/my-source HTTP/1.1" 200 228 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,044] marquez.service.DatasetService: Creating or updating dataset 'public.mytable' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=public.mytable), sourceName=SourceName(value=my-source), fields=[Field(name=FieldName(value=a), type=INTEGER, tags=[], description=Optional.empty), Field(name=FieldName(value=b), type=TIMESTAMP, tags=[], description=Optional.empty)], tags=[], description=Optional.empty, runId=Optional.empty))
+INFO  [2024-02-09 04:42:38,074] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 614 "-" "marquez-java/0.45.0-SNAPSHOT" 34
+INFO  [2024-02-09 04:42:38,087] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/search?q=mytable&limit=100 HTTP/1.1" 200 219 "-" "marquez-java/0.45.0-SNAPSHOT" 13
+INFO  [2024-02-09 04:42:38,106] marquez.service.SourceService: Create/upsert source 'test_source312' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test10605867, description=Optional[test_description1546093357])
+INFO  [2024-02-09 04:42:38,110] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/test_source312 HTTP/1.1" 200 231 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,115] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/sources?limit=100&offset=0 HTTP/1.1" 200 372 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:38,122] marquez.service.SourceService: Create/upsert source 's3://bucket' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test10605867, description=Optional[test_description1546093357])
+INFO  [2024-02-09 04:42:38,127] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/s3:%2F%2Fbucket HTTP/1.1" 200 228 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:38,130] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/sources?limit=100&offset=0 HTTP/1.1" 200 395 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:38,136] marquez.service.SourceService: Create/upsert source 'asdf' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test10605867, description=Optional[test_description1546093357])
+INFO  [2024-02-09 04:42:38,142] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/asdf HTTP/1.1" 200 221 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:38,145] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/sources?limit=100&offset=0 HTTP/1.1" 200 414 "-" "marquez-java/0.45.0-SNAPSHOT" 2
+INFO  [2024-02-09 04:42:38,149] marquez.service.SourceService: Create/upsert source 'bigquery:' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test10605867, description=Optional[test_description1546093357])
+INFO  [2024-02-09 04:42:38,154] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/bigquery: HTTP/1.1" 200 226 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:38,157] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/sources?limit=100&offset=0 HTTP/1.1" 200 432 "-" "marquez-java/0.45.0-SNAPSHOT" 2
+INFO  [2024-02-09 04:42:38,167] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:38,169] marquez.service.SourceService: Create/upsert source 'test_source1200325053' with meta: SourceMeta(type=SourceType(value=KAFKA), connectionUrl=kafka://localhost:9092, description=Optional[test_description301427051])
+INFO  [2024-02-09 04:42:38,175] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/test_source1200325053 HTTP/1.1" 200 214 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:38,185] marquez.service.DatasetService: Creating or updating dataset 'test_dataset2045356851' for namespace 's3://test_namespace220603737' with meta: StreamMeta(super=DatasetMeta(type=STREAM, physicalName=DatasetName(value=test_dataset2045356851), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description803085928], runId=Optional.empty), schemaLocation=http://localhost:8081/schemas/ids/1864665276)
+INFO  [2024-02-09 04:42:38,204] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset2045356851 HTTP/1.1" 200 616 "-" "marquez-java/0.45.0-SNAPSHOT" 31
+INFO  [2024-02-09 04:42:38,230] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets?limit=100&offset=0 HTTP/1.1" 200 1122 "-" "marquez-java/0.45.0-SNAPSHOT" 24
+INFO  [2024-02-09 04:42:38,238] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset2045356851/versions?limit=100&offset=0 HTTP/1.1" 200 315 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:38,244] marquez.service.DatasetService: Creating or updating dataset 'test_dataset2045356851' for namespace 's3://test_namespace220603737' with meta: StreamMeta(super=DatasetMeta(type=STREAM, physicalName=DatasetName(value=test_dataset2045356851), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description803085928], runId=Optional.empty), schemaLocation=http://localhost:8081/schemas/ids/1886026178)
+INFO  [2024-02-09 04:42:38,262] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset2045356851 HTTP/1.1" 200 616 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:38,268] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset2045356851/versions?limit=100&offset=0 HTTP/1.1" 200 361 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,278] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:38,291] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job164395158 HTTP/1.1" 200 490 "-" "marquez-java/0.45.0-SNAPSHOT" 13
+INFO  [2024-02-09 04:42:38,298] marquez.service.RunService: Creating run for job 'test_job164395158'...
+INFO  [2024-02-09 04:42:38,311] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job164395158/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:38,317] marquez.service.RunService: Creating run for job 'test_job164395158'...
+INFO  [2024-02-09 04:42:38,327] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job164395158/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:38,340] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/jobs/runs/45fd4236-4e77-4793-a89c-02a03d85779c/start HTTP/1.1" 200 361 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+INFO  [2024-02-09 04:42:38,359] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/jobs/runs/45fd4236-4e77-4793-a89c-02a03d85779c/complete HTTP/1.1" 200 502 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:38,366] marquez.service.RunService: Creating run for job 'test_job164395158'...
+INFO  [2024-02-09 04:42:38,377] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job164395158/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:38,392] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/jobs/runs/22330f3f-24ed-48a7-9365-94262407918c/start HTTP/1.1" 200 361 "-" "marquez-java/0.45.0-SNAPSHOT" 14
+INFO  [2024-02-09 04:42:38,408] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job164395158/runs?limit=100&offset=0 HTTP/1.1" 200 421 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:38,418] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:38,422] marquez.service.DatasetService: Creating or updating dataset 'public.mytable' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=public.mytable), sourceName=SourceName(value=my-source), fields=[Field(name=FieldName(value=a), type=INTEGER, tags=[TagName(value=ANY)], description=Optional.empty)], tags=[TagName(value=ANY_DATASET)], description=Optional.empty, runId=Optional.empty))
+INFO  [2024-02-09 04:42:38,440] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 571 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:38,446] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/public.mytable HTTP/1.1" 200 332 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,455] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:38,456] marquez.service.SourceService: Create/upsert source 'test_source1200325053' with meta: SourceMeta(type=SourceType(value=KAFKA), connectionUrl=kafka://localhost:9092, description=Optional[test_description301427051])
+INFO  [2024-02-09 04:42:38,461] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/test_source1200325053 HTTP/1.1" 200 214 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:38,472] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job490087624 HTTP/1.1" 200 490 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:38,478] marquez.service.RunService: Creating run for job 'test_job490087624'...
+INFO  [2024-02-09 04:42:38,487] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job490087624/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 14
+INFO  [2024-02-09 04:42:38,491] marquez.service.DatasetService: Creating or updating dataset 'test_dataset887085952' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset887085952), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description946845334], runId=Optional.empty))
+INFO  [2024-02-09 04:42:38,504] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset887085952 HTTP/1.1" 200 551 "-" "marquez-java/0.45.0-SNAPSHOT" 17
+INFO  [2024-02-09 04:42:38,508] marquez.service.DatasetService: Creating or updating dataset 'test_dataset757089811' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset757089811), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description361915686], runId=Optional.empty))
+INFO  [2024-02-09 04:42:38,522] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset757089811 HTTP/1.1" 200 551 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:38,528] marquez.service.DatasetService: Creating or updating dataset 'test_dataset214688511' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset214688511), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description2077735869], runId=Optional[RunId(value=24b1b40d-555b-4690-a6a0-fbde16d2e213)]))
+INFO  [2024-02-09 04:42:38,540] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset214688511 HTTP/1.1" 200 552 "-" "marquez-java/0.45.0-SNAPSHOT" 17
+INFO  [2024-02-09 04:42:38,546] marquez.service.DatasetService: Creating or updating dataset 'test_dataset351517276' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset351517276), sourceName=SourceName(value=test_source1200325053), fields=[], tags=[], description=Optional[test_description1283937702], runId=Optional[RunId(value=24b1b40d-555b-4690-a6a0-fbde16d2e213)]))
+INFO  [2024-02-09 04:42:38,558] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset351517276 HTTP/1.1" 200 552 "-" "marquez-java/0.45.0-SNAPSHOT" 18
+INFO  [2024-02-09 04:42:38,603] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job490087624 HTTP/1.1" 200 1750 "-" "marquez-java/0.45.0-SNAPSHOT" 44
+INFO  [2024-02-09 04:42:38,611] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/jobs/test_job490087624 HTTP/1.1" 200 583 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:38,620] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,621] marquez.service.SourceService: Create/upsert source 'test_source268932635' with meta: SourceMeta(type=SourceType(value=KAFKA), connectionUrl=kafka://localhost:9092, description=Optional[test_description301427051])
+INFO  [2024-02-09 04:42:38,625] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/sources/test_source268932635 HTTP/1.1" 200 213 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:38,629] marquez.service.DatasetService: Creating or updating dataset 'test_dataset149110853' for namespace 's3://test_namespace220603737' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset149110853), sourceName=SourceName(value=test_source268932635), fields=[Field(name=FieldName(value=field0), type=VARCHAR(162), tags=[], description=Optional.empty), Field(name=FieldName(value=field1), type=null, tags=[], description=Optional.empty)], tags=[], description=Optional.empty, runId=Optional.empty))
+INFO  [2024-02-09 04:42:38,644] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace220603737/datasets/test_dataset149110853 HTTP/1.1" 200 654 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:38,653] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/DEFAULT HTTP/1.1" 200 197 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,657] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces?limit=100&offset=0 HTTP/1.1" 200 350 "-" "marquez-java/0.45.0-SNAPSHOT" 4
+INFO  [2024-02-09 04:42:38,666] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/database:%2F%2Flocalhost:1234 HTTP/1.1" 200 215 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,669] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces?limit=100&offset=0 HTTP/1.1" 200 373 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:38,677] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/s3:%2F%2Fbucket HTTP/1.1" 200 201 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,680] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces?limit=100&offset=0 HTTP/1.1" 200 390 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:38,688] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "PUT /api/v1/namespaces/bigquery: HTTP/1.1" 200 199 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:38,691] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:38 +0000] "GET /api/v1/namespaces?limit=100&offset=0 HTTP/1.1" 200 410 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:38,695] org.eclipse.jetty.server.AbstractConnector: Stopped application@33b2ab5f{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:38,695] org.eclipse.jetty.server.AbstractConnector: Stopped admin@603ac1ca{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:38,695] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@38c341a1{/,null,STOPPED}
+INFO  [2024-02-09 04:42:38,696] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1e0d1477{/,null,STOPPED}
+INFO  [2024-02-09 10:12:38,702] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:12:38,702] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:12:38,702] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:12:38,720] org.flywaydb.core.internal.command.DbClean: Successfully dropped pre-schema database level objects (execution time 00:00.000s)
+INFO  [2024-02-09 10:12:38,776] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.054s)
+INFO  [2024-02-09 10:12:38,784] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.007s)
+INFO  [2024-02-09 10:12:38,784] org.flywaydb.core.internal.command.DbClean: Successfully dropped post-schema database level objects (execution time 00:00.000s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

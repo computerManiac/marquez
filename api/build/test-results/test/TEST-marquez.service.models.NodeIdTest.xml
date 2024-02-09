@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.service.models.NodeIdTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:44:18" hostname="MacBook-Air.local" time="0.016">
+  <properties/>
+  <testcase name="testJob-1 namespace=my-namespace, job=my-job" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testJob-2 namespace=org://team, job=my-job" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDatasetField-1 namespace=my-namespace, dataset=my-dataset, field=colA" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDatasetField-2 namespace=gs://bucket, dataset=/path/to/data, field=colA" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDatasetField-3 namespace=gs://bucket, dataset=/path/to/data, field=col_A" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetWithVersion-1 namespace=my-namespace, dataset=my-dataset#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetWithVersion-2 namespace=gs://bucket, dataset=/path/to/data#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetWithVersion-3 namespace=postgresql://hostname:5432/database, dataset=my_table#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDatasetWithVersion-4 namespace=my-namespace, dataset=my_struct&lt;a:bigint,b:bigint,c:string&gt;#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetField-1 namespace=my-namespace, dataset=my-dataset, fieldWithVersion=colA#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetField-2 namespace=gs://bucket, dataset=/path/to/data, fieldWithVersion=colA#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetField-3 namespace=gs://bucket, dataset=/path/to/data, fieldWithVersion=col_A#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testJobWithVersion-1 namespace=my-namespace, job=my-job#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testJobWithVersion-2 namespace=org://team, job=my-job#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDataset-1 namespace=my-namespace, dataset=my-dataset" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDataset-2 namespace=gs://bucket, dataset=/path/to/data" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDataset-3 namespace=postgresql://hostname:5432/database, dataset=my_table" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDataset-4 namespace=my-namespace, dataset=my_struct&lt;a:bigint,b:bigint,c:string&gt;" classname="marquez.service.models.NodeIdTest" time="0.0"/>
+  <testcase name="testDatasetField-1 namespaceFirst=my-namespace, datasetFirst=my-dataset, fieldFirst=colA, namespaceSecond=my-namespace, datasetSecond=my-dataset, fieldSecond=colB" classname="marquez.service.models.NodeIdTest" time="0.002"/>
+  <testcase name="testDatasetField-2 namespaceFirst=gs://bucket, datasetFirst=/path/to/data, fieldFirst=colA, namespaceSecond=gs://bucket, datasetSecond=/path/to/data, fieldSecond=colB" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <testcase name="testDatasetField-3 namespaceFirst=gs://bucket, datasetFirst=/path/to/data, fieldFirst=col_A, namespaceSecond=gs://bucket, datasetSecond=/path/to/data, fieldSecond=col_B" classname="marquez.service.models.NodeIdTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

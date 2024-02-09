@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.client.MarquezPathV1Test" tests="11" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:44:23" hostname="MacBook-Air.local" time="0.032">
+  <properties/>
+  <testcase name="testPath_placeholderReplacement()" classname="marquez.client.MarquezPathV1Test" time="0.004"/>
+  <testcase name="[1] expected=/api/v1/namespaces/s3:%2F%2Fbucket/datasets/source-file.json, namespaceName=s3://bucket, datasetName=source-file.json" classname="marquez.client.MarquezPathV1Test" time="0.007"/>
+  <testcase name="[2] expected=/api/v1/namespaces/snowflake:%2F%2Faccount/datasets/DATABASE.SCHEMA.%22Exotic%20Table%20Name!%22, namespaceName=snowflake://account, datasetName=DATABASE.SCHEMA.&quot;Exotic Table Name!&quot;" classname="marquez.client.MarquezPathV1Test" time="0.001"/>
+  <testcase name="[1] expected=/api/v1/namespaces/s3:%2F%2Fbucket, namespaceName=s3://bucket" classname="marquez.client.MarquezPathV1Test" time="0.001"/>
+  <testcase name="[2] expected=/api/v1/namespaces/bigquery:, namespaceName=bigquery:" classname="marquez.client.MarquezPathV1Test" time="0.0"/>
+  <testcase name="[3] expected=/api/v1/namespaces/usual-namespace-name, namespaceName=usual-namespace-name" classname="marquez.client.MarquezPathV1Test" time="0.0"/>
+  <testcase name="[4] expected=/api/v1/namespaces/a:%5C:a, namespaceName=a:\:a" classname="marquez.client.MarquezPathV1Test" time="0.001"/>
+  <testcase name="testPath_columnLineage()" classname="marquez.client.MarquezPathV1Test" time="0.0"/>
+  <testcase name="testPath_tooMuchPlaceholders()" classname="marquez.client.MarquezPathV1Test" time="0.001"/>
+  <testcase name="testPath_notEnoughPlaceholders()" classname="marquez.client.MarquezPathV1Test" time="0.0"/>
+  <testcase name="testPath_noPlaceholders()" classname="marquez.client.MarquezPathV1Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

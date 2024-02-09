@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.client.MarquezHttpTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:44:23" hostname="MacBook-Air.local" time="0.238">
+  <properties/>
+  <testcase name="testGet_throwsOnHttpError()" classname="marquez.client.MarquezHttpTest" time="0.205"/>
+  <testcase name="testGet()" classname="marquez.client.MarquezHttpTest" time="0.002"/>
+  <testcase name="testPut()" classname="marquez.client.MarquezHttpTest" time="0.003"/>
+  <testcase name="testNewMarquezHttp_throwsOnNull()" classname="marquez.client.MarquezHttpTest" time="0.005"/>
+  <testcase name="testClose()" classname="marquez.client.MarquezHttpTest" time="0.001"/>
+  <testcase name="testPost()" classname="marquez.client.MarquezHttpTest" time="0.003"/>
+  <testcase name="testClient_preservesBaseURL()" classname="marquez.client.MarquezHttpTest" time="0.001"/>
+  <testcase name="testClient_properlyFormatsNamespaces()" classname="marquez.client.MarquezHttpTest" time="0.001"/>
+  <testcase name="testPost_noHttpBody_throwsOnHttpError()" classname="marquez.client.MarquezHttpTest" time="0.002"/>
+  <testcase name="testDelete()" classname="marquez.client.MarquezHttpTest" time="0.002"/>
+  <testcase name="testDelete_throwsOnHttpError()" classname="marquez.client.MarquezHttpTest" time="0.002"/>
+  <testcase name="testPost_noHttpBody()" classname="marquez.client.MarquezHttpTest" time="0.002"/>
+  <testcase name="testPost_throwsOnHttpError()" classname="marquez.client.MarquezHttpTest" time="0.002"/>
+  <testcase name="testPut_throwsOnHttpError()" classname="marquez.client.MarquezHttpTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

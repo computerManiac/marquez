@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.db.ColumnsTest" tests="29" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:59" hostname="MacBook-Air.local" time="0.214">
+  <properties/>
+  <testcase name="testUuidOrNull_null()" classname="marquez.db.ColumnsTest" time="0.191"/>
+  <testcase name="testUuidOrNull_uuid()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testStringOrNull_null()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testTimestampOrThrow_timestamp()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testStringArrayOrThrow_array()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testStringArrayOrThrow_throw()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testTimestampOrThrow_throw()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testUuidOrThrow_uuid()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testBooleanOrDefault()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testStringOrNull_string()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testBlankUri()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testBlankUrl()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testPgIntervalOrThrow_pgInterval()" classname="marquez.db.ColumnsTest" time="0.003"/>
+  <testcase name="testUuidOrThrow_throw()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testBooleanOrThrow()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testUuidArrayOrThrow_array()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testUuidArrayOrThrow_throw()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testIntOrThrow_int()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testStringOrThrow_string()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testBigDecimalOrThrow_bigDecimal()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testTimestampOrNull_timestamp()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testStringOrThrow_throw()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testNullUri()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testNullUrl()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testEmptyUri()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testEmptyUrl()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <testcase name="testBooleanOrThrowNoValue()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testTimestampOrNull_null()" classname="marquez.db.ColumnsTest" time="0.001"/>
+  <testcase name="testBooleanOrDefaultWhenNoValue()" classname="marquez.db.ColumnsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

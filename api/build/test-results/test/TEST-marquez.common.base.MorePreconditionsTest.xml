@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.common.base.MorePreconditionsTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:54" hostname="MacBook-Air.local" time="0.006">
+  <properties/>
+  <testcase name="testNotBlank()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnEmptyString_noErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.001"/>
+  <testcase name="testCheckNotBlank_throwsOnEmptyString_errorMessageWithArgs()" classname="marquez.common.base.MorePreconditionsTest" time="0.001"/>
+  <testcase name="testCheckNotBlank_throwsOnNullString_nullErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnNullString_withErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.001"/>
+  <testcase name="testCheckNotBlank_throwsOnEmptyString_nullErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnBlankString_withErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnBlankString_errorMessageWithArgs()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnEmptyString_withErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnNullString_noErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <testcase name="testCheckNotBlank_throwsOnBlankString_noErrorMessage()" classname="marquez.common.base.MorePreconditionsTest" time="0.001"/>
+  <testcase name="testCheckNotBlank_throwsOnNullString_errorMessageWithArgs()" classname="marquez.common.base.MorePreconditionsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

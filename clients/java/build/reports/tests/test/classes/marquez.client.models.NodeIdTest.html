@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - NodeIdTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>NodeIdTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/marquez.client.models.html">marquez.client.models</a> &gt; NodeIdTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">18</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.015s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testDataset-1 namespace=my-namespace, dataset=my-dataset</td>
+<td class="success">testDataset(String, String)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDataset-2 namespace=gs://bucket, dataset=/path/to/data</td>
+<td class="success">testDataset(String, String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDataset-3 namespace=postgresql://hostname:5432/database, dataset=my_table</td>
+<td class="success">testDataset(String, String)[3]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDataset-4 namespace=my-namespace, dataset=my_struct&lt;a:bigint,b:bigint,c:string&gt;</td>
+<td class="success">testDataset(String, String)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetField-1 namespace=my-namespace, dataset=my-dataset, field=colA</td>
+<td class="success">testDatasetField(String, String, String)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetField-2 namespace=gs://bucket, dataset=/path/to/data, field=colA</td>
+<td class="success">testDatasetField(String, String, String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetField-3 namespace=gs://bucket, dataset=/path/to/data, field=col_A</td>
+<td class="success">testDatasetField(String, String, String)[3]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetFieldWithVersion-1 namespace=my-namespace, dataset=my-dataset, fieldWithVersion=colA#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetFieldWithVersion(String, String, String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetFieldWithVersion-2 namespace=gs://bucket, dataset=/path/to/data, fieldWithVersion=colA#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetFieldWithVersion(String, String, String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetFieldWithVersion-3 namespace=gs://bucket, dataset=/path/to/data, fieldWithVersion=col_A#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetFieldWithVersion(String, String, String)[3]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetWithVersion-1 namespace=my-namespace, dataset=my-dataset#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetWithVersion(String, String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetWithVersion-2 namespace=gs://bucket, dataset=/path/to/data#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetWithVersion(String, String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetWithVersion-3 namespace=postgresql://hostname:5432/database, dataset=my_table#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetWithVersion(String, String)[3]</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testDatasetWithVersion-4 namespace=my-namespace, dataset=my_struct&lt;a:bigint,b:bigint,c:string&gt;#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testDatasetWithVersion(String, String)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testJob-1 namespace=my-namespace, job=my-job</td>
+<td class="success">testJob(String, String)[1]</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testJob-2 namespace=org://team, job=my-job</td>
+<td class="success">testJob(String, String)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testJobWithVersion-1 namespace=my-namespace, job=my-job#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testJobWithVersion(String, String)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testJobWithVersion-2 namespace=org://team, job=my-job#aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee</td>
+<td class="success">testJobWithVersion(String, String)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at 09-Feb-2024, 10:14:23 am</p>
+</div>
+</div>
+</body>
+</html>

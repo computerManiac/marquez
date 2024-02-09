@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - RunIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>RunIntegrationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/marquez.html">marquez</a> &gt; RunIntegrationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.348s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testApp_markAsAborted()</td>
+<td class="success">0.058s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testApp_markAsFailed()</td>
+<td class="success">0.121s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testApp_updateOutputDataset()</td>
+<td class="success">0.126s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSerialization()</td>
+<td class="success">0.043s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>INFO  [2024-02-09 04:42:43,930] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-02-09 04:42:43,930] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-02-09 04:42:43,930] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: graphql-playground for path /graphql-playground/*
+INFO  [2024-02-09 04:42:43,930] marquez.MarquezApp: Running startup actions...
+INFO  [2024-02-09 04:42:43,930] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 04:42:43,930] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 04:42:43,930] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 04:42:44,042] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 04:42:44,058] marquez.db.DbMigration: No pending migrations found, skipping...
+INFO  [2024-02-09 04:42:44,086] io.dropwizard.server.ServerFactory: Starting MarquezApp
+    __  ___
+   /  |/  /___ __________ ___  _____  ____
+  / /|_/ / __ `/ ___/ __ `/ / / / _ \/_  /
+ / /  / / /_/ / /  / /_/ / /_/ /  __/ / /_
+/_/  /_/\__,_/_/   \__, /\__,_/\___/ /___/
+                     /_/
+INFO  [2024-02-09 04:42:44,088] org.eclipse.jetty.setuid.SetUIDListener: Opened application@3265fd80{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:44,088] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@6b8d674c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:44,088] org.eclipse.jetty.server.Server: jetty-9.4.53.v20231009; built: 2023-10-09T12:29:09.265Z; git: 27bde00a0b95a1d5bbee0eae7984f891d2d0f8c9; jvm 20.0.1
+
+INFO  [2024-02-09 04:42:44,136] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/namespaces (marquez.api.NamespaceResource)
+    DELETE  /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    PUT     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace}/datasets (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    PUT     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions/{version} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+    GET     /api/v1/search (marquez.api.SearchResource)
+    GET     /api/v1/sources (marquez.api.SourceResource)
+    GET     /api/v1/sources/{source} (marquez.api.SourceResource)
+    PUT     /api/v1/sources/{source} (marquez.api.SourceResource)
+    GET     /api/v1/tags (marquez.api.TagResource)
+    PUT     /api/v1/tags/{name} (marquez.api.TagResource)
+
+INFO  [2024-02-09 04:42:44,136] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6cbf0694{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:44,137] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-02-09 04:42:44,137] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@1b764434{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:44,137] org.eclipse.jetty.server.AbstractConnector: Started application@3265fd80{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:44,138] org.eclipse.jetty.server.AbstractConnector: Started admin@6b8d674c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:44,138] org.eclipse.jetty.server.Server: Started @109743ms
+INFO  [2024-02-09 04:42:44,147] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818 HTTP/1.1&quot; 200 217 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 9
+INFO  [2024-02-09 04:42:44,152] marquez.service.SourceService: Create/upsert source 'test_source1791383330' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test721597125, description=Optional[test_description442384451])
+INFO  [2024-02-09 04:42:44,157] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/sources/test_source1791383330 HTTP/1.1&quot; 200 238 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 9
+INFO  [2024-02-09 04:42:44,188] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818 HTTP/1.1&quot; 200 217 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 5
+INFO  [2024-02-09 04:42:44,190] marquez.service.SourceService: Create/upsert source 'test_source1791383330' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test721597125, description=Optional[test_description442384451])
+INFO  [2024-02-09 04:42:44,193] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/sources/test_source1791383330 HTTP/1.1&quot; 200 238 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 5
+INFO  [2024-02-09 04:42:44,221] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/jobs/test_job710073114 HTTP/1.1&quot; 200 493 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 32
+INFO  [2024-02-09 04:42:44,239] marquez.service.RunService: Creating run for job 'test_job710073114'...
+INFO  [2024-02-09 04:42:44,268] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;POST /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/jobs/test_job710073114/runs HTTP/1.1&quot; 201 332 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 43
+INFO  [2024-02-09 04:42:44,301] marquez.logging.LoggingMdcFilter: status: 200
+WARN  [2024-02-09 04:42:44,302] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getRun in marquez.api.RunResource contains empty path annotation.
+
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;POST /api/v1/jobs/runs/cf6ad311-56b6-42cc-977a-9ba80020e901/fail HTTP/1.1&quot; 200 477 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 31
+INFO  [2024-02-09 04:42:44,309] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818 HTTP/1.1&quot; 200 217 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 6
+INFO  [2024-02-09 04:42:44,311] marquez.service.SourceService: Create/upsert source 'test_source1791383330' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test721597125, description=Optional[test_description442384451])
+INFO  [2024-02-09 04:42:44,315] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/sources/test_source1791383330 HTTP/1.1&quot; 200 238 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 4
+INFO  [2024-02-09 04:42:44,326] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/jobs/test_job710073114 HTTP/1.1&quot; 200 1000 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 10
+INFO  [2024-02-09 04:42:44,332] marquez.service.RunService: Creating run for job 'test_job710073114'...
+INFO  [2024-02-09 04:42:44,341] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;POST /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/jobs/test_job710073114/runs HTTP/1.1&quot; 201 332 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 15
+INFO  [2024-02-09 04:42:44,360] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;POST /api/v1/jobs/runs/0b1b9dc5-9e01-4bbf-a974-9cd7dfa09cc6/abort HTTP/1.1&quot; 200 478 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 19
+INFO  [2024-02-09 04:42:44,367] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818 HTTP/1.1&quot; 200 217 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 5
+INFO  [2024-02-09 04:42:44,369] marquez.service.SourceService: Create/upsert source 'test_source1791383330' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test721597125, description=Optional[test_description442384451])
+INFO  [2024-02-09 04:42:44,373] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/sources/test_source1791383330 HTTP/1.1&quot; 200 238 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 5
+INFO  [2024-02-09 04:42:44,381] marquez.service.DatasetService: Creating or updating dataset 'my-output-ds' for namespace 's3://test_namespace2009120818' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1354359709), sourceName=SourceName(value=test_source1791383330), fields=[Field(name=FieldName(value=test_field2011975481), type=VARCHAR(200), tags=[TagName(value=SENSITIVE)], description=Optional[test_description469842013]), Field(name=FieldName(value=test_field1862481173), type=VARCHAR(145), tags=[], description=Optional[test_description1889861698])], tags=[TagName(value=PII)], description=Optional[test_description1422822681], runId=Optional.empty))
+INFO  [2024-02-09 04:42:44,409] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/datasets/my-output-ds HTTP/1.1&quot; 200 765 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 38
+INFO  [2024-02-09 04:42:44,425] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/jobs/test_job710073114 HTTP/1.1&quot; 200 1001 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 12
+INFO  [2024-02-09 04:42:44,431] marquez.service.RunService: Creating run for job 'test_job710073114'...
+INFO  [2024-02-09 04:42:44,440] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;POST /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/jobs/test_job710073114/runs HTTP/1.1&quot; 201 332 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 14
+INFO  [2024-02-09 04:42:44,447] marquez.service.DatasetService: Creating or updating dataset 'my-output-ds' for namespace 's3://test_namespace2009120818' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1354359709), sourceName=SourceName(value=test_source1791383330), fields=[Field(name=FieldName(value=test_field2011975481), type=VARCHAR(200), tags=[TagName(value=SENSITIVE)], description=Optional[test_description469842013]), Field(name=FieldName(value=test_field1862481173), type=VARCHAR(145), tags=[], description=Optional[test_description1889861698])], tags=[TagName(value=PII)], description=Optional[test_description1422822681], runId=Optional[RunId(value=67f0d5e5-05a7-436e-b0af-bdbbb868daf8)]))
+INFO  [2024-02-09 04:42:44,464] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace2009120818/datasets/my-output-ds HTTP/1.1&quot; 200 765 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 23
+INFO  [2024-02-09 04:42:44,485] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:44 +0000] &quot;POST /api/v1/jobs/runs/67f0d5e5-05a7-436e-b0af-bdbbb868daf8/complete HTTP/1.1&quot; 200 629 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 21
+INFO  [2024-02-09 04:42:44,487] org.eclipse.jetty.server.AbstractConnector: Stopped application@3265fd80{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:44,488] org.eclipse.jetty.server.AbstractConnector: Stopped admin@6b8d674c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:44,488] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@1b764434{/,null,STOPPED}
+INFO  [2024-02-09 04:42:44,488] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6cbf0694{/,null,STOPPED}
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at 09-Feb-2024, 10:14:18 am</p>
+</div>
+</div>
+</body>
+</html>

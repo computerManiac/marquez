@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.db.models.ColumnLineageNodeDataTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:43:50" hostname="MacBook-Air.local" time="0.0">
+  <properties/>
+  <testcase name="testGettersWhenInputFieldsAreNull()" classname="marquez.db.models.ColumnLineageNodeDataTest" time="0.0"/>
+  <testcase name="testGetters()" classname="marquez.db.models.ColumnLineageNodeDataTest" time="0.0"/>
+  <testcase name="testGettersWhenEmptyInputFields()" classname="marquez.db.models.ColumnLineageNodeDataTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

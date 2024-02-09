@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.client.models.SourceMetaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:44:23" hostname="MacBook-Air.local" time="0.0">
+  <properties/>
+  <testcase name="testToJson()" classname="marquez.client.models.SourceMetaTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

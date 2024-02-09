@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.common.models.NamespaceNameTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:54" hostname="MacBook-Air.local" time="0.008">
+  <properties/>
+  <testcase name="[1] name=&#x1f602;" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[2] name=!" classname="marquez.common.models.NamespaceNameTest" time="0.001"/>
+  <testcase name="[3] name=" classname="marquez.common.models.NamespaceNameTest" time="0.001"/>
+  <testcase name="[1] name=DEFAULT" classname="marquez.common.models.NamespaceNameTest" time="0.001"/>
+  <testcase name="[2] name=database://localhost:1234" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[3] name=s3://bucket" classname="marquez.common.models.NamespaceNameTest" time="0.001"/>
+  <testcase name="[4] name=bigquery:" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[5] name=sqlserver://synapse-test-test001.sql.azuresynapse.net;databaseName=TESTPOOL1;" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[6] name==" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[7] name=@" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[8] name=abfss://something@.something-else.core.windows.net" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <testcase name="[9] name=databricks+connector://asdf-123456-7890.cloud.databricks.com" classname="marquez.common.models.NamespaceNameTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.common.api.JobResourceIntegrationTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:52" hostname="MacBook-Air.local" time="1.56">
+  <properties/>
+  <testcase name="testApp_listJobs()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.184"/>
+  <testcase name="testApp_listRuns()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.127"/>
+  <testcase name="testApp_notExistsJob()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.054"/>
+  <testcase name="testApp_createJobWithMissingRun()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.057"/>
+  <testcase name="testApp_createNonMatchingJobWithRun()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.115"/>
+  <testcase name="testApp_listJobVersionsWithInvalidJobName()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.053"/>
+  <testcase name="testApp_createDuplicateRun()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.088"/>
+  <testcase name="testApp_createNotExistingDataset()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.053"/>
+  <testcase name="testApp_getJobVersionWithInputsAndOutputs()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.325"/>
+  <testcase name="testApp_deleteJob()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.081"/>
+  <testcase name="testApp_listJobVersions()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.191"/>
+  <testcase name="testApp_notExistsJobForRun()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.049"/>
+  <testcase name="getSource()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.053"/>
+  <testcase name="testApp_getJobVersion()" classname="marquez.common.api.JobResourceIntegrationTest" time="0.118"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:12:51,421] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:12:51,421] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:12:51,421] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:12:51,447] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 10:12:51,470] org.flywaydb.core.internal.command.DbValidate: Successfully validated 82 migrations (execution time 00:00.013s)
+INFO  [2024-02-09 10:12:51,481] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory: Creating Schema History table "public"."flyway_schema_history" ...
+INFO  [2024-02-09 10:12:51,492] org.flywaydb.core.internal.command.DbMigrate: Current version of schema "public": << Empty Schema >>
+INFO  [2024-02-09 10:12:51,501] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "1 - initial schema"
+INFO  [2024-02-09 10:12:51,542] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "2 - add job contexts"
+INFO  [2024-02-09 10:12:51,554] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "2.1 - alter job versions to add job context uuid"
+INFO  [2024-02-09 10:12:51,563] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "3 - drop not null constraint on job location"
+INFO  [2024-02-09 10:12:51,574] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "4 - add dataset fields"
+INFO  [2024-02-09 10:12:51,585] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "5 - add tags"
+INFO  [2024-02-09 10:12:51,596] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "6 - alter datasets to add last modified"
+INFO  [2024-02-09 10:12:51,604] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "7 - alter run args to change args"
+INFO  [2024-02-09 10:12:51,612] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "8 - alter datasets to change unique constraint"
+INFO  [2024-02-09 10:12:51,623] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "9 - alter sources to drop composite unique constraint"
+INFO  [2024-02-09 10:12:51,631] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "10 - drop unique constraint on job name"
+INFO  [2024-02-09 10:12:51,639] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "11 - alter datasets to rename last modified"
+INFO  [2024-02-09 10:12:51,647] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "12 - alter dataset fields to change unique constraint"
+INFO  [2024-02-09 10:12:51,656] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "13 - alter run add start end state"
+INFO  [2024-02-09 10:12:51,665] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "14 - index datasetversion datasetid"
+INFO  [2024-02-09 10:12:51,674] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "15 - index created at and current run state on runs"
+INFO  [2024-02-09 10:12:51,682] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "16 - index created at on runs"
+INFO  [2024-02-09 10:12:51,690] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "17.1 - unique version constraint"
+INFO  [2024-02-09 10:12:51,700] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "17.2 - open lineage"
+INFO  [2024-02-09 10:12:51,709] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "18 - drop dataset constraint"
+INFO  [2024-02-09 10:12:51,717] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "19 - alter run to add external id"
+INFO  [2024-02-09 10:12:51,725] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "20 - drop lineage pk"
+INFO  [2024-02-09 10:12:51,733] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "21 - alter jobs to add namespace name"
+INFO  [2024-02-09 10:12:51,742] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "22 - alter job versions to add namespace"
+INFO  [2024-02-09 10:12:51,753] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "23 - alter runs"
+INFO  [2024-02-09 10:12:51,765] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "24 - alter jobs"
+INFO  [2024-02-09 10:12:51,777] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "25 - alter datasets"
+INFO  [2024-02-09 10:12:51,786] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "26 - alter jobs change type"
+INFO  [2024-02-09 10:12:51,795] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "27 - alter runs add context"
+INFO  [2024-02-09 10:12:51,804] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "28 - update jobs fix inputs"
+INFO  [2024-02-09 10:12:51,813] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "29 - alter dataset versions add fields"
+INFO  [2024-02-09 10:12:51,843] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "30 - alter runs change transitioned at type"
+INFO  [2024-02-09 10:12:51,853] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "31 - alter job io mapping"
+INFO  [2024-02-09 10:12:51,866] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "32 - index runs created at"
+INFO  [2024-02-09 10:12:51,874] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "33 - index lineage events run id"
+INFO  [2024-02-09 10:12:51,885] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "34 - drop not null constraint on field type"
+INFO  [2024-02-09 10:12:51,892] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "35 - drop io mapping tables"
+INFO  [2024-02-09 10:12:51,900] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "36 - drop run id column in lineage events"
+INFO  [2024-02-09 10:12:51,909] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "37 - alter dataset fields to change type"
+INFO  [2024-02-09 10:12:51,917] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "38 - alter namespaces to resize name"
+INFO  [2024-02-09 10:12:51,924] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "39 - alter sources to resize name"
+INFO  [2024-02-09 10:12:51,933] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "40 - alter tables resize namespace and connection url"
+INFO  [2024-02-09 10:12:51,946] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "41 - add operation to dataset versions"
+INFO  [2024-02-09 10:12:51,954] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "42 - add job symlink target"
+INFO  [2024-02-09 10:12:51,964] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "43 - alter jobs add job parent uuid"
+INFO  [2024-02-09 10:12:51,968] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "jobs_namespace_uuid_name_key" does not exist, skipping
+INFO  [2024-02-09 10:12:51,970] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: ALTER TABLE / ADD CONSTRAINT USING INDEX will rename index "jobs_namespace_uuid_name_parent" to "unique_jobs_namespace_uuid_name_parent"
+INFO  [2024-02-09 10:12:51,980] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44 - runs job versions add job uuid"
+INFO  [2024-02-09 10:12:51,983] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger "runs_insert_job_uuid" for relation "runs" does not exist, skipping
+INFO  [2024-02-09 10:12:51,991] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44.1 - UpdateRunsWithJobUUID" [non-transactional]
+INFO  [2024-02-09 10:12:51,998] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44.2 - BackfillAirflowParentRuns" [non-transactional]
+INFO  [2024-02-09 10:12:52,010] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44.3 - BackfillJobsWithParents" [non-transactional]
+INFO  [2024-02-09 10:12:52,021] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "45 - update jobs view rule"
+INFO  [2024-02-09 10:12:52,022] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint "jobs_namespace_uuid_name_key" of relation "jobs" does not exist, skipping
+INFO  [2024-02-09 10:12:52,023] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "jobs_namespace_uuid_name_key" does not exist, skipping
+INFO  [2024-02-09 10:12:52,023] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint "jobs_namespace_uuid_name_null_parent" of relation "jobs" does not exist, skipping
+INFO  [2024-02-09 10:12:52,024] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "jobs_namespace_uuid_name_parent" does not exist, skipping
+INFO  [2024-02-09 10:12:52,025] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "unique_jobs_namespace_uuid_name_parent" does not exist, skipping
+INFO  [2024-02-09 10:12:52,037] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "46 - add hidden column to jobs and datasets"
+INFO  [2024-02-09 10:12:52,045] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "47 - add lineage event indexes" [non-transactional]
+INFO  [2024-02-09 10:12:52,053] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "48 - dataset symlinks"
+INFO  [2024-02-09 10:12:52,057] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: type "dataset_name" does not exist, skipping
+INFO  [2024-02-09 10:12:52,063] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "49 - column lineage"
+INFO  [2024-02-09 10:12:52,073] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "50 - index dataset fields"
+INFO  [2024-02-09 10:12:52,081] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "51 - job indices for lineage"
+INFO  [2024-02-09 10:12:52,090] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "52 - alter dataset symlinks"
+INFO  [2024-02-09 10:12:52,099] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "53 - add hidden namespace"
+INFO  [2024-02-09 10:12:52,106] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "54 - lineage events created at indexed"
+INFO  [2024-02-09 10:12:52,115] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "55.1 - add dataset facets"
+INFO  [2024-02-09 10:12:52,124] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "55.2 - add job facets"
+INFO  [2024-02-09 10:12:52,133] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "55.3 - add run facets"
+INFO  [2024-02-09 10:12:52,142] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "56.1 - CreateFacetViews" [non-transactional]
+INFO  [2024-02-09 10:12:52,165] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "57.1 - add migration lock"
+INFO  [2024-02-09 10:12:52,172] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "57.2 - BackFillFacets" [non-transactional]
+INFO  [2024-02-09 10:12:52,174] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table
+INFO  [2024-02-09 10:12:52,186] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table finished
+INFO  [2024-02-09 10:12:52,186] marquez.db.migrations.V57_1__BackfillFacets: Estimating 0 events in lineage_events table
+INFO  [2024-02-09 10:12:52,203] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "58 - job fqn name index"
+INFO  [2024-02-09 10:12:52,210] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "59.1 - column lineage add indexes"
+INFO  [2024-02-09 10:12:52,220] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "59.2 - facet tables indexes"
+INFO  [2024-02-09 10:12:52,230] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "60 - alter job versions to drop job context uuid"
+INFO  [2024-02-09 10:12:52,238] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "61 - unique job fqn index"
+INFO  [2024-02-09 10:12:52,251] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "62 - index run states and parent run"
+INFO  [2024-02-09 10:12:52,264] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "63 - alter tables add on cascade delete"
+INFO  [2024-02-09 10:12:52,303] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "64 - drop job contexts"
+INFO  [2024-02-09 10:12:52,313] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "65 - alter dataset facets to change lineage event type as nullable"
+INFO  [2024-02-09 10:12:52,321] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "66.1 - alter job facets"
+INFO  [2024-02-09 10:12:52,331] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "66.2 - alter lineage events add event type"
+INFO  [2024-02-09 10:12:52,338] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "66.3 - BackfillJobFacetsWithJobVersion" [non-transactional]
+INFO  [2024-02-09 10:12:52,347] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "67.1 - job versions io mapping add job reference"
+INFO  [2024-02-09 10:12:52,358] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "67.2 - Back fill job_uuid and is_current_job_version in job_versions_io_mapping table" [non-transactional]
+INFO  [2024-02-09 10:12:52,368] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" with repeatable migration "1 Jobs view and rewrite function"
+INFO  [2024-02-09 10:12:52,372] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger "update_symlinks" for relation "jobs_view" does not exist, skipping
+INFO  [2024-02-09 10:12:52,380] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" with repeatable migration "2 Runs view"
+INFO  [2024-02-09 10:12:52,388] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" with repeatable migration "3 Datasets view"
+INFO  [2024-02-09 10:12:52,390] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: view "datasets_view" does not exist, skipping
+INFO  [2024-02-09 10:12:52,397] org.flywaydb.core.internal.command.DbMigrate: Successfully applied 82 migrations to schema "public", now at version v67.2 (execution time 00:00.907s)
+INFO  [2024-02-09 04:42:52,488] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-02-09 04:42:52,488] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-02-09 04:42:52,488] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: graphql-playground for path /graphql-playground/*
+INFO  [2024-02-09 04:42:52,488] marquez.MarquezApp: Running startup actions...
+INFO  [2024-02-09 04:42:52,489] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 04:42:52,489] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 04:42:52,489] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 04:42:52,608] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 04:42:52,627] marquez.db.DbMigration: No pending migrations found, skipping...
+INFO  [2024-02-09 04:42:52,685] io.dropwizard.server.ServerFactory: Starting MarquezApp
+    __  ___
+   /  |/  /___ __________ ___  _____  ____
+  / /|_/ / __ `/ ___/ __ `/ / / / _ \/_  /
+ / /  / / /_/ / /  / /_/ / /_/ /  __/ / /_
+/_/  /_/\__,_/_/   \__, /\__,_/\___/ /___/
+                     /_/
+INFO  [2024-02-09 04:42:52,687] org.eclipse.jetty.setuid.SetUIDListener: Opened application@87ea28a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:52,687] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@2f846600{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:52,687] org.eclipse.jetty.server.Server: jetty-9.4.53.v20231009; built: 2023-10-09T12:29:09.265Z; git: 27bde00a0b95a1d5bbee0eae7984f891d2d0f8c9; jvm 20.0.1
+
+INFO  [2024-02-09 04:42:52,754] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/namespaces (marquez.api.NamespaceResource)
+    DELETE  /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    PUT     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace}/datasets (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    PUT     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions/{version} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+    GET     /api/v1/search (marquez.api.SearchResource)
+    GET     /api/v1/sources (marquez.api.SourceResource)
+    GET     /api/v1/sources/{source} (marquez.api.SourceResource)
+    PUT     /api/v1/sources/{source} (marquez.api.SourceResource)
+    GET     /api/v1/tags (marquez.api.TagResource)
+    PUT     /api/v1/tags/{name} (marquez.api.TagResource)
+
+INFO  [2024-02-09 04:42:52,755] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@612b9060{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:52,755] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-02-09 04:42:52,755] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@160b23df{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:52,756] org.eclipse.jetty.server.AbstractConnector: Started application@87ea28a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:52,756] org.eclipse.jetty.server.AbstractConnector: Started admin@2f846600{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:52,756] org.eclipse.jetty.server.Server: Started @118362ms
+INFO  [2024-02-09 04:42:52,890] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:52 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 27
+INFO  [2024-02-09 04:42:52,896] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:52,907] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:52 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:52,976] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:52 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 75
+INFO  [2024-02-09 04:42:53,006] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs?limit=100&offset=0 HTTP/1.1" 200 294 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:53,057] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:53,060] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,065] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:53,084] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:53,098] marquez.service.RunService: Creating run for job 'test_job737933606'...
+INFO  [2024-02-09 04:42:53,122] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 39
+INFO  [2024-02-09 04:42:53,141] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs?limit=100&offset=0 HTTP/1.1" 200 219 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+INFO  [2024-02-09 04:42:53,183] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,186] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,191] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+WARN  [2024-02-09 04:42:53,199] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/not-existing HTTP/1.1" 404 54 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,239] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,241] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,246] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+WARN  [2024-02-09 04:42:53,255] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 404 78 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:53,299] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:53,301] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,306] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,323] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:53,341] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/DIFFERENT_JOB HTTP/1.1" 200 481 "-" "marquez-java/0.45.0-SNAPSHOT" 16
+INFO  [2024-02-09 04:42:53,351] marquez.service.RunService: Creating run for job 'DIFFERENT_JOB'...
+INFO  [2024-02-09 04:42:53,364] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/DIFFERENT_JOB/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 22
+WARN  [2024-02-09 04:42:53,372] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 404 78 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,411] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,413] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,418] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+WARN  [2024-02-09 04:42:53,425] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/a%20fake%20job%20name/versions?limit=5&offset=0 HTTP/1.1" 404 57 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:53,464] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,467] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,471] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,486] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 13
+INFO  [2024-02-09 04:42:53,494] marquez.service.RunService: Creating run for job 'test_job737933606'...
+INFO  [2024-02-09 04:42:53,507] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+WARN  [2024-02-09 04:42:53,514] marquez.logging.LoggingMdcFilter: status: 400
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs HTTP/1.1" 400 155 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,554] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,556] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,561] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+WARN  [2024-02-09 04:42:53,569] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 404 60 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,608] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,610] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,615] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:53,617] marquez.service.SourceService: Create/upsert source 'test_source483377159' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,626] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source483377159 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 10
+INFO  [2024-02-09 04:42:53,629] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,634] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,646] marquez.service.DatasetService: Creating or updating dataset 'test_dataset841183318' for namespace 's3://test_namespace1758396912' with meta: StreamMeta(super=DatasetMeta(type=STREAM, physicalName=DatasetName(value=test_dataset841183318), sourceName=SourceName(value=test_source483377159), fields=[], tags=[], description=Optional[test_description349717465], runId=Optional.empty), schemaLocation=http://localhost:8081/schemas/ids/411715649)
+INFO  [2024-02-09 04:42:53,678] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/datasets/test_dataset841183318 HTTP/1.1" 200 613 "-" "marquez-java/0.45.0-SNAPSHOT" 45
+INFO  [2024-02-09 04:42:53,687] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1666147726' for namespace 's3://test_namespace1758396912' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1666147726), sourceName=SourceName(value=test_source794423810), fields=[Field(name=FieldName(value=test_field1595617481), type=VARCHAR(42), tags=[TagName(value=SENSITIVE)], description=Optional[test_description559627072]), Field(name=FieldName(value=test_field1174067872), type=VARCHAR(197), tags=[], description=Optional[test_description1226789027])], tags=[TagName(value=PII)], description=Optional[test_description260294627], runId=Optional.empty))
+INFO  [2024-02-09 04:42:53,715] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/datasets/test_dataset1666147726 HTTP/1.1" 200 782 "-" "marquez-java/0.45.0-SNAPSHOT" 35
+INFO  [2024-02-09 04:42:53,735] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/newJob HTTP/1.1" 200 535 "-" "marquez-java/0.45.0-SNAPSHOT" 18
+INFO  [2024-02-09 04:42:53,744] marquez.service.RunService: Creating run for job 'newJob'...
+INFO  [2024-02-09 04:42:53,760] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/newJob/runs HTTP/1.1" 201 490 "-" "marquez-java/0.45.0-SNAPSHOT" 25
+INFO  [2024-02-09 04:42:53,775] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1666147726' for namespace 's3://test_namespace1758396912' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1666147726), sourceName=SourceName(value=test_source794423810), fields=[Field(name=FieldName(value=test_field1595617481), type=VARCHAR(42), tags=[TagName(value=SENSITIVE)], description=Optional[test_description559627072]), Field(name=FieldName(value=test_field1174067872), type=VARCHAR(197), tags=[], description=Optional[test_description1226789027])], tags=[TagName(value=PII)], description=Optional[test_description260294627], runId=Optional[RunId(value=606316a0-90b1-409e-be1a-09790655da63)]))
+INFO  [2024-02-09 04:42:53,799] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/datasets/test_dataset1666147726 HTTP/1.1" 200 782 "-" "marquez-java/0.45.0-SNAPSHOT" 37
+INFO  [2024-02-09 04:42:53,839] marquez.logging.LoggingMdcFilter: status: 200
+WARN  [2024-02-09 04:42:53,841] org.glassfish.jersey.internal.Errors: The following warnings have been detected: WARNING: The (sub)resource method getRun in marquez.api.RunResource contains empty path annotation.
+
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "POST /api/v1/jobs/runs/606316a0-90b1-409e-be1a-09790655da63/complete HTTP/1.1" 200 786 "-" "marquez-java/0.45.0-SNAPSHOT" 40
+INFO  [2024-02-09 04:42:53,858] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/newJob/versions?limit=5&offset=0 HTTP/1.1" 200 462 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+INFO  [2024-02-09 04:42:53,889] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/newJob/versions/97006fc4-49f0-3598-a01a-0c9a6fd43bd5 HTTP/1.1" 200 456 "-" "marquez-java/0.45.0-SNAPSHOT" 26
+INFO  [2024-02-09 04:42:53,935] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:53,937] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:53,942] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,955] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 12
+INFO  [2024-02-09 04:42:53,964] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs?limit=100&offset=0 HTTP/1.1" 200 293 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:53,971] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "DELETE /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:53,977] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:53 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs?limit=100&offset=0 HTTP/1.1" 200 26 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:54,015] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:54,017] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:54,022] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:54,037] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 13
+INFO  [2024-02-09 04:42:54,045] marquez.service.RunService: Creating run for job 'test_job737933606'...
+INFO  [2024-02-09 04:42:54,058] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:54,083] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/jobs/runs/1500d65e-e367-487b-a625-0cf113907706/complete HTTP/1.1" 200 480 "-" "marquez-java/0.45.0-SNAPSHOT" 25
+INFO  [2024-02-09 04:42:54,092] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/versions?limit=5&offset=0 HTTP/1.1" 200 369 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:54,100] marquez.service.RunService: Creating run for job 'test_job737933606'...
+INFO  [2024-02-09 04:42:54,112] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 19
+INFO  [2024-02-09 04:42:54,133] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 856 "-" "marquez-java/0.45.0-SNAPSHOT" 20
+INFO  [2024-02-09 04:42:54,159] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/jobs/runs/d8b552b3-6851-4114-aede-82795f55c567/complete HTTP/1.1" 200 480 "-" "marquez-java/0.45.0-SNAPSHOT" 25
+INFO  [2024-02-09 04:42:54,168] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/versions?limit=5&offset=0 HTTP/1.1" 200 467 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:54,208] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:54,209] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:54,214] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+WARN  [2024-02-09 04:42:54,220] marquez.logging.LoggingMdcFilter: status: 404
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/NotExists/runs HTTP/1.1" 404 51 "-" "marquez-java/0.45.0-SNAPSHOT" 5
+INFO  [2024-02-09 04:42:54,257] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:54,259] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:54,263] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:54,266] marquez.service.SourceService: Create/upsert source 'sourceName' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test1591729129, description=Optional[test_description1938921859])
+INFO  [2024-02-09 04:42:54,270] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/sources/sourceName HTTP/1.1" 200 229 "-" "marquez-java/0.45.0-SNAPSHOT" 6
+INFO  [2024-02-09 04:42:54,273] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "GET /api/v1/sources/sourceName HTTP/1.1" 200 229 "-" "marquez-java/0.45.0-SNAPSHOT" 3
+INFO  [2024-02-09 04:42:54,312] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912 HTTP/1.1" 200 218 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:54,314] marquez.service.SourceService: Create/upsert source 'test_source794423810' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test77858207, description=Optional[test_description787793158])
+INFO  [2024-02-09 04:42:54,319] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/sources/test_source794423810 HTTP/1.1" 200 236 "-" "marquez-java/0.45.0-SNAPSHOT" 7
+INFO  [2024-02-09 04:42:54,332] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606 HTTP/1.1" 200 493 "-" "marquez-java/0.45.0-SNAPSHOT" 11
+INFO  [2024-02-09 04:42:54,339] marquez.service.RunService: Creating run for job 'test_job737933606'...
+INFO  [2024-02-09 04:42:54,351] marquez.logging.LoggingMdcFilter: status: 201
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/runs HTTP/1.1" 201 332 "-" "marquez-java/0.45.0-SNAPSHOT" 18
+INFO  [2024-02-09 04:42:54,372] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "POST /api/v1/jobs/runs/77851033-ae53-4e97-ba83-07e65c44fb3a/complete HTTP/1.1" 200 480 "-" "marquez-java/0.45.0-SNAPSHOT" 21
+INFO  [2024-02-09 04:42:54,381] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/versions?limit=5&offset=0 HTTP/1.1" 200 370 "-" "marquez-java/0.45.0-SNAPSHOT" 9
+INFO  [2024-02-09 04:42:54,391] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:54 +0000] "GET /api/v1/namespaces/s3:%2F%2Ftest_namespace1758396912/jobs/test_job737933606/versions/a6447a66-b7df-3bb9-83c1-34bbbda946e9 HTTP/1.1" 200 361 "-" "marquez-java/0.45.0-SNAPSHOT" 8
+INFO  [2024-02-09 04:42:54,424] org.eclipse.jetty.server.AbstractConnector: Stopped application@87ea28a{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:54,424] org.eclipse.jetty.server.AbstractConnector: Stopped admin@2f846600{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:54,424] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@160b23df{/,null,STOPPED}
+INFO  [2024-02-09 04:42:54,425] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@612b9060{/,null,STOPPED}
+INFO  [2024-02-09 10:12:54,430] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:12:54,430] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:12:54,430] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:12:54,451] org.flywaydb.core.internal.command.DbClean: Successfully dropped pre-schema database level objects (execution time 00:00.000s)
+INFO  [2024-02-09 10:12:54,502] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.051s)
+INFO  [2024-02-09 10:12:54,510] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.007s)
+INFO  [2024-02-09 10:12:54,511] org.flywaydb.core.internal.command.DbClean: Successfully dropped post-schema database level objects (execution time 00:00.000s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

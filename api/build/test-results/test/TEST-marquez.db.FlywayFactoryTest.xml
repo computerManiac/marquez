@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.db.FlywayFactoryTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:43:09" hostname="MacBook-Air.local" time="0.055">
+  <properties/>
+  <testcase name="testBuild_overrideValidateOnMigrate()" classname="marquez.db.FlywayFactoryTest" time="0.047"/>
+  <testcase name="testBuild_overrideRepeatableSqlMigrationPrefix()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideCleanDisabled()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideGroup()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideMixed()" classname="marquez.db.FlywayFactoryTest" time="0.001"/>
+  <testcase name="testBuild_overrideTable()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideIgnoreMissingMigrations()" classname="marquez.db.FlywayFactoryTest" time="0.001"/>
+  <testcase name="testBuild_overrideIgnoreIgnoredMigrations()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideCleanOnValidationError()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overridePlaceholderReplacement()" classname="marquez.db.FlywayFactoryTest" time="0.001"/>
+  <testcase name="testBuild_overridePlaceholderPrefix()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideInitSql()" classname="marquez.db.FlywayFactoryTest" time="0.001"/>
+  <testcase name="testBuild_overridePlaceholderSuffix()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideEncoding()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideLocations()" classname="marquez.db.FlywayFactoryTest" time="0.001"/>
+  <testcase name="testBuild_overrideSqlMigrationPrefix()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideIgnoreFutureMigrations()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overridePlaceholders()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideIgnorePendingMigrations()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideConnectRetries()" classname="marquez.db.FlywayFactoryTest" time="0.001"/>
+  <testcase name="testBuild_overrideTablespace()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <testcase name="testBuild_overrideInstalledBy()" classname="marquez.db.FlywayFactoryTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

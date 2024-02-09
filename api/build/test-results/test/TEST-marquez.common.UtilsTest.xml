@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.common.UtilsTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:51" hostname="MacBook-Air.local" time="0.281">
+  <properties/>
+  <testcase name="testNewJobVersionFor_notEqual()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionForDBTableMetaDataIsNotEqualOnDifferentData()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testNewDatasetVersionFor_equalOnUnsortedSchemaFields()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionForDBTableMetaDataEqualOnSameData()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testToUrl()" classname="marquez.common.UtilsTest" time="0.256"/>
+  <testcase name="testFromStringJson()" classname="marquez.common.UtilsTest" time="0.003"/>
+  <testcase name="testChecksumFor_notEqual()" classname="marquez.common.UtilsTest" time="0.0"/>
+  <testcase name="testToJson_throwsOnNull()" classname="marquez.common.UtilsTest" time="0.002"/>
+  <testcase name="testFromJson_throwsOnNull()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionIsNotEqualOnDifferentData()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionForStreamMetaDataIsNotEqualOnDifferentData()" classname="marquez.common.UtilsTest" time="0.0"/>
+  <testcase name="testToUrl_throwsOnNull()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionWithNullDatasetFields()" classname="marquez.common.UtilsTest" time="0.0"/>
+  <testcase name="testChecksumFor_equal()" classname="marquez.common.UtilsTest" time="0.002"/>
+  <testcase name="testNewJobVersionFor_equalOnUnsortedInputsAndOutputs()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionEqualOnSameData()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testFromISJson()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testToUrl_throwsOnMalformed()" classname="marquez.common.UtilsTest" time="0.0"/>
+  <testcase name="testToJson()" classname="marquez.common.UtilsTest" time="0.002"/>
+  <testcase name="testDatasetVersionWithNullFields()" classname="marquez.common.UtilsTest" time="0.0"/>
+  <testcase name="testFromIOExceptionThrownByFromJson()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testNewJobVersionFor_equal()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testDatasetVersionForStreamMetaDataEqualOnSameData()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <testcase name="testNewDatasetVersionFor_equalOnUnsortedFields()" classname="marquez.common.UtilsTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

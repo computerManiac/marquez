@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.api.OpenLineageResourceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:47" hostname="MacBook-Air.local" time="0.042">
+  <properties/>
+  <testcase name="testGetLineage()" classname="marquez.api.OpenLineageResourceTest" time="0.038"/>
+  <testcase name="testGetLineageEventsBadSort()" classname="marquez.api.OpenLineageResourceTest" time="0.003"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:12:47,863] org.glassfish.jersey.test.inmemory.InMemoryTestContainerFactory$InMemoryTestContainer: Creating InMemoryTestContainer configured at the base URI http://localhost:0/
+INFO  [2024-02-09 10:12:47,901] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

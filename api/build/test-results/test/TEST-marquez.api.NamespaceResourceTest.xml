@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.api.NamespaceResourceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:47" hostname="MacBook-Air.local" time="0.255">
+  <properties/>
+  <testcase name="testListWithFilter()" classname="marquez.api.NamespaceResourceTest" time="0.165"/>
+  <testcase name="testFindAllFilter()" classname="marquez.api.NamespaceResourceTest" time="0.09"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:12:47,337] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:12:47,337] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:12:47,338] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:12:47,382] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 10:12:47,421] org.flywaydb.core.internal.command.DbValidate: Successfully validated 82 migrations (execution time 00:00.028s)
+INFO  [2024-02-09 10:12:47,433] org.flywaydb.core.internal.command.DbMigrate: Current version of schema "public": 67.2
+INFO  [2024-02-09 10:12:47,435] org.flywaydb.core.internal.command.DbMigrate: Schema "public" is up to date. No migration necessary.
+INFO  [2024-02-09 10:12:47,720] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:12:47,720] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:12:47,720] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:12:47,749] org.flywaydb.core.internal.command.DbClean: Successfully dropped pre-schema database level objects (execution time 00:00.000s)
+INFO  [2024-02-09 10:12:47,808] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.058s)
+INFO  [2024-02-09 10:12:47,817] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.008s)
+INFO  [2024-02-09 10:12:47,817] org.flywaydb.core.internal.command.DbClean: Successfully dropped post-schema database level objects (execution time 00:00.000s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

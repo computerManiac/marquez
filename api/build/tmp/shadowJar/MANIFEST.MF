@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Created-By: Gradle 8.4
+Built-By: anwar
+Build-Jdk: 20.0.1
+Implementation-Title: api
+Implementation-Version: 0.45.0-SNAPSHOT
+Main-Class: marquez.MarquezApp
+

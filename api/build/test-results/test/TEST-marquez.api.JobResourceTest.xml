@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.api.JobResourceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:47" hostname="MacBook-Air.local" time="0.042">
+  <properties/>
+  <testcase name="testGetJobFacetsByRunUUid()" classname="marquez.api.JobResourceTest" time="0.036"/>
+  <testcase name="testGetRunFacetsByRunUUid()" classname="marquez.api.JobResourceTest" time="0.006"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:12:47,188] org.glassfish.jersey.test.inmemory.InMemoryTestContainerFactory$InMemoryTestContainer: Creating InMemoryTestContainer configured at the base URI http://localhost:0/
+INFO  [2024-02-09 10:12:47,288] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

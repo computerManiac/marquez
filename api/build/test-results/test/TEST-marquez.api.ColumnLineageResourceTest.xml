@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.api.ColumnLineageResourceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:42:46" hostname="MacBook-Air.local" time="0.1">
+  <properties/>
+  <testcase name="testGetColumnLineageByVersionedNodeWithDownstream()" classname="marquez.api.ColumnLineageResourceTest" time="0.069"/>
+  <testcase name="testGetColumnLineageByDatasetField()" classname="marquez.api.ColumnLineageResourceTest" time="0.026"/>
+  <testcase name="testGetColumnLineageByDataset()" classname="marquez.api.ColumnLineageResourceTest" time="0.004"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:12:46,774] org.glassfish.jersey.test.inmemory.InMemoryTestContainerFactory$InMemoryTestContainer: Creating InMemoryTestContainer configured at the base URI http://localhost:0/
+INFO  [2024-02-09 10:12:46,839] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

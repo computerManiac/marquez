@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.service.models.EventTypeResolverTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:44:17" hostname="MacBook-Air.local" time="0.001">
+  <properties/>
+  <testcase name="testTypeFromIdForJobEvent()" classname="marquez.service.models.EventTypeResolverTest" time="0.0"/>
+  <testcase name="testTypeFromIdForRunEvent()" classname="marquez.service.models.EventTypeResolverTest" time="0.0"/>
+  <testcase name="testTypeFromIdForDatasetEvent()" classname="marquez.service.models.EventTypeResolverTest" time="0.0"/>
+  <testcase name="testTypeFromIdForUnknownEvent()" classname="marquez.service.models.EventTypeResolverTest" time="0.0"/>
+  <testcase name="testTypeFromIdForNullId()" classname="marquez.service.models.EventTypeResolverTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

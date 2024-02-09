@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.client.MarquezClientTest" tests="42" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:44:21" hostname="MacBook-Air.local" time="1.677">
+  <properties/>
+  <testcase name="testGetNamespace()" classname="marquez.client.MarquezClientTest" time="1.023"/>
+  <testcase name="testCreateSource()" classname="marquez.client.MarquezClientTest" time="0.061"/>
+  <testcase name="testCreateStream()" classname="marquez.client.MarquezClientTest" time="0.145"/>
+  <testcase name="testMarkRunAsRunning()" classname="marquez.client.MarquezClientTest" time="0.032"/>
+  <testcase name="testClientBuilder_overrideUrl()" classname="marquez.client.MarquezClientTest" time="0.134"/>
+  <testcase name="testGetStreamVersion()" classname="marquez.client.MarquezClientTest" time="0.012"/>
+  <testcase name="testGetColumnLineage()" classname="marquez.client.MarquezClientTest" time="0.028"/>
+  <testcase name="testModifiedStream()" classname="marquez.client.MarquezClientTest" time="0.008"/>
+  <testcase name="testModifiedDbTable()" classname="marquez.client.MarquezClientTest" time="0.017"/>
+  <testcase name="testListEvents()" classname="marquez.client.MarquezClientTest" time="0.026"/>
+  <testcase name="testListDatasetVersions()" classname="marquez.client.MarquezClientTest" time="0.017"/>
+  <testcase name="testMarkRunAsFailed()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testListDatasets()" classname="marquez.client.MarquezClientTest" time="0.007"/>
+  <testcase name="testCreateNamespace()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testDeleteDatasetTag()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testListEventsWithSortDirectionBeforeAfter()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testTagField()" classname="marquez.client.MarquezClientTest" time="0.002"/>
+  <testcase name="testCreateJobWithRunId()" classname="marquez.client.MarquezClientTest" time="0.034"/>
+  <testcase name="testMarkRunAsAborted()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testDeleteTagField()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testListEventsWithSortDirection()" classname="marquez.client.MarquezClientTest" time="0.002"/>
+  <testcase name="testGetLineage()" classname="marquez.client.MarquezClientTest" time="0.007"/>
+  <testcase name="testMarkRunAsCompleted()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testTagDataset()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testListNamespaces()" classname="marquez.client.MarquezClientTest" time="0.006"/>
+  <testcase name="testClientBuilder_throwsOnBadUrl()" classname="marquez.client.MarquezClientTest" time="0.004"/>
+  <testcase name="testCreateJob()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testCreateRun()" classname="marquez.client.MarquezClientTest" time="0.004"/>
+  <testcase name="testCreateTag()" classname="marquez.client.MarquezClientTest" time="0.008"/>
+  <testcase name="testCreateDbTable()" classname="marquez.client.MarquezClientTest" time="0.002"/>
+  <testcase name="testGetJob()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testGetRun()" classname="marquez.client.MarquezClientTest" time="0.002"/>
+  <testcase name="testClientBuilder_sslContext()" classname="marquez.client.MarquezClientTest" time="0.001"/>
+  <testcase name="testGetSource()" classname="marquez.client.MarquezClientTest" time="0.002"/>
+  <testcase name="testGetStream()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testClientBuilder_default()" classname="marquez.client.MarquezClientTest" time="0.004"/>
+  <testcase name="testGetDbTableVersion()" classname="marquez.client.MarquezClientTest" time="0.003"/>
+  <testcase name="testGetDbTable()" classname="marquez.client.MarquezClientTest" time="0.002"/>
+  <testcase name="testListSources()" classname="marquez.client.MarquezClientTest" time="0.007"/>
+  <testcase name="testListJobs()" classname="marquez.client.MarquezClientTest" time="0.009"/>
+  <testcase name="testListRuns()" classname="marquez.client.MarquezClientTest" time="0.005"/>
+  <testcase name="testListTags()" classname="marquez.client.MarquezClientTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

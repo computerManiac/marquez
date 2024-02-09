@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.db.DatasetFacetsDaoTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:43:04" hostname="MacBook-Air.local" time="1.569">
+  <properties/>
+  <testcase name="testInsertDatasetFacetsForVersionFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.13"/>
+  <testcase name="testInsertDatasetFacetsForOutputStatisticsFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.124"/>
+  <testcase name="testInsertDatasetFacetsForLifecycleStateChangeFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.106"/>
+  <testcase name="testInsertDatasetFacetsForDataQualityMetricsFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.102"/>
+  <testcase name="testInsertDatasetFacetsForDataQualityAssertionsFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.101"/>
+  <testcase name="testInsertDatasetFacetsForUnknownTypeFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.136"/>
+  <testcase name="testInsertDatasetFacetsForColumnLineageFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.11"/>
+  <testcase name="testInsertDatasetFacetsForSchemaFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.106"/>
+  <testcase name="testInsertDatasetFacetsForDocumentationFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.1"/>
+  <testcase name="testInsertDatasetFacetsForDatasourceFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.099"/>
+  <testcase name="testInsertOutputDatasetFacetsFor()" classname="marquez.db.DatasetFacetsDaoTest" time="0.127"/>
+  <testcase name="testInsertDatasetFacetsForOwnershipFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.101"/>
+  <testcase name="testInsertDatasetFacetsForDescriptionFacet()" classname="marquez.db.DatasetFacetsDaoTest" time="0.107"/>
+  <testcase name="testInsertInputDatasetFacetsFor()" classname="marquez.db.DatasetFacetsDaoTest" time="0.114"/>
+  <system-out><![CDATA[INFO  [2024-02-09 10:13:03,216] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:13:03,216] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:13:03,216] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:13:03,230] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 10:13:03,243] org.flywaydb.core.internal.command.DbValidate: Successfully validated 82 migrations (execution time 00:00.008s)
+INFO  [2024-02-09 10:13:03,248] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory: Creating Schema History table "public"."flyway_schema_history" ...
+INFO  [2024-02-09 10:13:03,255] org.flywaydb.core.internal.command.DbMigrate: Current version of schema "public": << Empty Schema >>
+INFO  [2024-02-09 10:13:03,258] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "1 - initial schema"
+INFO  [2024-02-09 10:13:03,281] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "2 - add job contexts"
+INFO  [2024-02-09 10:13:03,291] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "2.1 - alter job versions to add job context uuid"
+INFO  [2024-02-09 10:13:03,299] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "3 - drop not null constraint on job location"
+INFO  [2024-02-09 10:13:03,306] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "4 - add dataset fields"
+INFO  [2024-02-09 10:13:03,316] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "5 - add tags"
+INFO  [2024-02-09 10:13:03,326] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "6 - alter datasets to add last modified"
+INFO  [2024-02-09 10:13:03,333] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "7 - alter run args to change args"
+INFO  [2024-02-09 10:13:03,341] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "8 - alter datasets to change unique constraint"
+INFO  [2024-02-09 10:13:03,350] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "9 - alter sources to drop composite unique constraint"
+INFO  [2024-02-09 10:13:03,357] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "10 - drop unique constraint on job name"
+INFO  [2024-02-09 10:13:03,364] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "11 - alter datasets to rename last modified"
+INFO  [2024-02-09 10:13:03,371] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "12 - alter dataset fields to change unique constraint"
+INFO  [2024-02-09 10:13:03,379] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "13 - alter run add start end state"
+INFO  [2024-02-09 10:13:03,387] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "14 - index datasetversion datasetid"
+INFO  [2024-02-09 10:13:03,395] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "15 - index created at and current run state on runs"
+INFO  [2024-02-09 10:13:03,402] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "16 - index created at on runs"
+INFO  [2024-02-09 10:13:03,409] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "17.1 - unique version constraint"
+INFO  [2024-02-09 10:13:03,417] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "17.2 - open lineage"
+INFO  [2024-02-09 10:13:03,425] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "18 - drop dataset constraint"
+INFO  [2024-02-09 10:13:03,433] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "19 - alter run to add external id"
+INFO  [2024-02-09 10:13:03,440] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "20 - drop lineage pk"
+INFO  [2024-02-09 10:13:03,448] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "21 - alter jobs to add namespace name"
+INFO  [2024-02-09 10:13:03,456] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "22 - alter job versions to add namespace"
+INFO  [2024-02-09 10:13:03,465] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "23 - alter runs"
+INFO  [2024-02-09 10:13:03,477] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "24 - alter jobs"
+INFO  [2024-02-09 10:13:03,488] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "25 - alter datasets"
+INFO  [2024-02-09 10:13:03,497] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "26 - alter jobs change type"
+INFO  [2024-02-09 10:13:03,506] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "27 - alter runs add context"
+INFO  [2024-02-09 10:13:03,514] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "28 - update jobs fix inputs"
+INFO  [2024-02-09 10:13:03,523] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "29 - alter dataset versions add fields"
+INFO  [2024-02-09 10:13:03,549] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "30 - alter runs change transitioned at type"
+INFO  [2024-02-09 10:13:03,558] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "31 - alter job io mapping"
+INFO  [2024-02-09 10:13:03,570] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "32 - index runs created at"
+INFO  [2024-02-09 10:13:03,577] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "33 - index lineage events run id"
+INFO  [2024-02-09 10:13:03,587] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "34 - drop not null constraint on field type"
+INFO  [2024-02-09 10:13:03,595] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "35 - drop io mapping tables"
+INFO  [2024-02-09 10:13:03,603] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "36 - drop run id column in lineage events"
+INFO  [2024-02-09 10:13:03,611] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "37 - alter dataset fields to change type"
+INFO  [2024-02-09 10:13:03,619] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "38 - alter namespaces to resize name"
+INFO  [2024-02-09 10:13:03,626] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "39 - alter sources to resize name"
+INFO  [2024-02-09 10:13:03,634] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "40 - alter tables resize namespace and connection url"
+INFO  [2024-02-09 10:13:03,646] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "41 - add operation to dataset versions"
+INFO  [2024-02-09 10:13:03,654] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "42 - add job symlink target"
+INFO  [2024-02-09 10:13:03,662] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "43 - alter jobs add job parent uuid"
+INFO  [2024-02-09 10:13:03,665] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "jobs_namespace_uuid_name_key" does not exist, skipping
+INFO  [2024-02-09 10:13:03,668] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: ALTER TABLE / ADD CONSTRAINT USING INDEX will rename index "jobs_namespace_uuid_name_parent" to "unique_jobs_namespace_uuid_name_parent"
+INFO  [2024-02-09 10:13:03,676] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44 - runs job versions add job uuid"
+INFO  [2024-02-09 10:13:03,678] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger "runs_insert_job_uuid" for relation "runs" does not exist, skipping
+INFO  [2024-02-09 10:13:03,686] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44.1 - UpdateRunsWithJobUUID" [non-transactional]
+INFO  [2024-02-09 10:13:03,693] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44.2 - BackfillAirflowParentRuns" [non-transactional]
+INFO  [2024-02-09 10:13:03,702] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "44.3 - BackfillJobsWithParents" [non-transactional]
+INFO  [2024-02-09 10:13:03,711] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "45 - update jobs view rule"
+INFO  [2024-02-09 10:13:03,713] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint "jobs_namespace_uuid_name_key" of relation "jobs" does not exist, skipping
+INFO  [2024-02-09 10:13:03,713] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "jobs_namespace_uuid_name_key" does not exist, skipping
+INFO  [2024-02-09 10:13:03,714] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint "jobs_namespace_uuid_name_null_parent" of relation "jobs" does not exist, skipping
+INFO  [2024-02-09 10:13:03,714] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "jobs_namespace_uuid_name_parent" does not exist, skipping
+INFO  [2024-02-09 10:13:03,715] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index "unique_jobs_namespace_uuid_name_parent" does not exist, skipping
+INFO  [2024-02-09 10:13:03,726] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "46 - add hidden column to jobs and datasets"
+INFO  [2024-02-09 10:13:03,734] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "47 - add lineage event indexes" [non-transactional]
+INFO  [2024-02-09 10:13:03,742] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "48 - dataset symlinks"
+INFO  [2024-02-09 10:13:03,745] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: type "dataset_name" does not exist, skipping
+INFO  [2024-02-09 10:13:03,752] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "49 - column lineage"
+INFO  [2024-02-09 10:13:03,761] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "50 - index dataset fields"
+INFO  [2024-02-09 10:13:03,768] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "51 - job indices for lineage"
+INFO  [2024-02-09 10:13:03,776] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "52 - alter dataset symlinks"
+INFO  [2024-02-09 10:13:03,784] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "53 - add hidden namespace"
+INFO  [2024-02-09 10:13:03,794] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "54 - lineage events created at indexed"
+INFO  [2024-02-09 10:13:03,802] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "55.1 - add dataset facets"
+INFO  [2024-02-09 10:13:03,811] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "55.2 - add job facets"
+INFO  [2024-02-09 10:13:03,819] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "55.3 - add run facets"
+INFO  [2024-02-09 10:13:03,828] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "56.1 - CreateFacetViews" [non-transactional]
+INFO  [2024-02-09 10:13:03,845] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "57.1 - add migration lock"
+INFO  [2024-02-09 10:13:03,851] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "57.2 - BackFillFacets" [non-transactional]
+INFO  [2024-02-09 10:13:03,853] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table
+INFO  [2024-02-09 10:13:03,864] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table finished
+INFO  [2024-02-09 10:13:03,865] marquez.db.migrations.V57_1__BackfillFacets: Estimating 0 events in lineage_events table
+INFO  [2024-02-09 10:13:03,880] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "58 - job fqn name index"
+INFO  [2024-02-09 10:13:03,887] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "59.1 - column lineage add indexes"
+INFO  [2024-02-09 10:13:03,897] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "59.2 - facet tables indexes"
+INFO  [2024-02-09 10:13:03,907] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "60 - alter job versions to drop job context uuid"
+INFO  [2024-02-09 10:13:03,914] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "61 - unique job fqn index"
+INFO  [2024-02-09 10:13:03,926] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "62 - index run states and parent run"
+INFO  [2024-02-09 10:13:03,937] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "63 - alter tables add on cascade delete"
+INFO  [2024-02-09 10:13:03,974] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "64 - drop job contexts"
+INFO  [2024-02-09 10:13:03,982] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "65 - alter dataset facets to change lineage event type as nullable"
+INFO  [2024-02-09 10:13:03,990] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "66.1 - alter job facets"
+INFO  [2024-02-09 10:13:03,999] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "66.2 - alter lineage events add event type"
+INFO  [2024-02-09 10:13:04,006] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "66.3 - BackfillJobFacetsWithJobVersion" [non-transactional]
+INFO  [2024-02-09 10:13:04,014] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "67.1 - job versions io mapping add job reference"
+INFO  [2024-02-09 10:13:04,025] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" to version "67.2 - Back fill job_uuid and is_current_job_version in job_versions_io_mapping table" [non-transactional]
+INFO  [2024-02-09 10:13:04,034] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" with repeatable migration "1 Jobs view and rewrite function"
+INFO  [2024-02-09 10:13:04,037] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger "update_symlinks" for relation "jobs_view" does not exist, skipping
+INFO  [2024-02-09 10:13:04,044] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" with repeatable migration "2 Runs view"
+INFO  [2024-02-09 10:13:04,052] org.flywaydb.core.internal.command.DbMigrate: Migrating schema "public" with repeatable migration "3 Datasets view"
+INFO  [2024-02-09 10:13:04,053] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: view "datasets_view" does not exist, skipping
+INFO  [2024-02-09 10:13:04,059] org.flywaydb.core.internal.command.DbMigrate: Successfully applied 82 migrations to schema "public", now at version v67.2 (execution time 00:00.806s)
+INFO  [2024-02-09 10:13:05,642] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:13:05,642] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:13:05,642] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:13:05,659] org.flywaydb.core.internal.command.DbClean: Successfully dropped pre-schema database level objects (execution time 00:00.000s)
+INFO  [2024-02-09 10:13:05,708] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.048s)
+INFO  [2024-02-09 10:13:05,715] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema "public" (execution time 00:00.006s)
+INFO  [2024-02-09 10:13:05,715] org.flywaydb.core.internal.command.DbClean: Successfully dropped post-schema database level objects (execution time 00:00.000s)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TagResourceIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TagResourceIntegrationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/marquez.api.html">marquez.api</a> &gt; TagResourceIntegrationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.387s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testApp_createTag()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testApp_listTags()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testApp_testDatasetTagDelete()</td>
+<td class="success">0.202s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testApp_testDatasetTagFieldDelete()</td>
+<td class="success">0.152s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>INFO  [2024-02-09 10:12:47,955] tc.postgres:14: Creating container for image: postgres:14
+INFO  [2024-02-09 10:12:48,006] tc.postgres:14: Container postgres:14 is starting: 353af70f5de101e1e8c6a4bd675f4dd9a6b9ccd05264f765cbb8a50550637713
+INFO  [2024-02-09 10:12:48,926] tc.postgres:14: Container postgres:14 started in PT0.971144S
+INFO  [2024-02-09 10:12:48,927] tc.postgres:14: Container is started (JDBC URL: jdbc:postgresql://localhost:56140/test?loggerLevel=OFF)
+INFO  [2024-02-09 04:42:49,029] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2024-02-09 04:42:49,029] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2024-02-09 04:42:49,029] io.dropwizard.assets.AssetsBundle: Registering AssetBundle with name: graphql-playground for path /graphql-playground/*
+INFO  [2024-02-09 04:42:49,030] marquez.MarquezApp: Running startup actions...
+INFO  [2024-02-09 04:42:49,030] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 04:42:49,030] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 04:42:49,030] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 04:42:49,180] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:56140/test (PostgreSQL 14.10)
+INFO  [2024-02-09 04:42:49,204] marquez.db.DbMigration: Migrating database...
+INFO  [2024-02-09 04:42:49,204] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 04:42:49,204] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 04:42:49,204] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 04:42:49,216] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory: Creating Schema History table &quot;public&quot;.&quot;flyway_schema_history&quot; ...
+INFO  [2024-02-09 04:42:49,237] org.flywaydb.core.internal.command.DbMigrate: Current version of schema &quot;public&quot;: &lt;&lt; Empty Schema &gt;&gt;
+INFO  [2024-02-09 04:42:49,251] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;1 - initial schema&quot;
+INFO  [2024-02-09 04:42:49,283] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;2 - add job contexts&quot;
+INFO  [2024-02-09 04:42:49,294] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;2.1 - alter job versions to add job context uuid&quot;
+INFO  [2024-02-09 04:42:49,303] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;3 - drop not null constraint on job location&quot;
+INFO  [2024-02-09 04:42:49,313] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;4 - add dataset fields&quot;
+INFO  [2024-02-09 04:42:49,325] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;5 - add tags&quot;
+INFO  [2024-02-09 04:42:49,339] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;6 - alter datasets to add last modified&quot;
+INFO  [2024-02-09 04:42:49,356] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;7 - alter run args to change args&quot;
+INFO  [2024-02-09 04:42:49,367] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;8 - alter datasets to change unique constraint&quot;
+INFO  [2024-02-09 04:42:49,378] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;9 - alter sources to drop composite unique constraint&quot;
+INFO  [2024-02-09 04:42:49,388] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;10 - drop unique constraint on job name&quot;
+INFO  [2024-02-09 04:42:49,399] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;11 - alter datasets to rename last modified&quot;
+INFO  [2024-02-09 04:42:49,407] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;12 - alter dataset fields to change unique constraint&quot;
+INFO  [2024-02-09 04:42:49,417] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;13 - alter run add start end state&quot;
+INFO  [2024-02-09 04:42:49,425] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;14 - index datasetversion datasetid&quot;
+INFO  [2024-02-09 04:42:49,434] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;15 - index created at and current run state on runs&quot;
+INFO  [2024-02-09 04:42:49,444] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;16 - index created at on runs&quot;
+INFO  [2024-02-09 04:42:49,452] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;17.1 - unique version constraint&quot;
+INFO  [2024-02-09 04:42:49,462] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;17.2 - open lineage&quot;
+INFO  [2024-02-09 04:42:49,472] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;18 - drop dataset constraint&quot;
+INFO  [2024-02-09 04:42:49,481] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;19 - alter run to add external id&quot;
+INFO  [2024-02-09 04:42:49,490] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;20 - drop lineage pk&quot;
+INFO  [2024-02-09 04:42:49,499] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;21 - alter jobs to add namespace name&quot;
+INFO  [2024-02-09 04:42:49,509] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;22 - alter job versions to add namespace&quot;
+INFO  [2024-02-09 04:42:49,521] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;23 - alter runs&quot;
+INFO  [2024-02-09 04:42:49,536] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;24 - alter jobs&quot;
+INFO  [2024-02-09 04:42:49,548] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;25 - alter datasets&quot;
+INFO  [2024-02-09 04:42:49,558] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;26 - alter jobs change type&quot;
+INFO  [2024-02-09 04:42:49,569] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;27 - alter runs add context&quot;
+INFO  [2024-02-09 04:42:49,579] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;28 - update jobs fix inputs&quot;
+INFO  [2024-02-09 04:42:49,590] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;29 - alter dataset versions add fields&quot;
+INFO  [2024-02-09 04:42:49,633] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;30 - alter runs change transitioned at type&quot;
+INFO  [2024-02-09 04:42:49,646] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;31 - alter job io mapping&quot;
+INFO  [2024-02-09 04:42:49,660] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;32 - index runs created at&quot;
+INFO  [2024-02-09 04:42:49,670] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;33 - index lineage events run id&quot;
+INFO  [2024-02-09 04:42:49,682] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;34 - drop not null constraint on field type&quot;
+INFO  [2024-02-09 04:42:49,691] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;35 - drop io mapping tables&quot;
+INFO  [2024-02-09 04:42:49,701] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;36 - drop run id column in lineage events&quot;
+INFO  [2024-02-09 04:42:49,710] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;37 - alter dataset fields to change type&quot;
+INFO  [2024-02-09 04:42:49,719] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;38 - alter namespaces to resize name&quot;
+INFO  [2024-02-09 04:42:49,728] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;39 - alter sources to resize name&quot;
+INFO  [2024-02-09 04:42:49,737] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;40 - alter tables resize namespace and connection url&quot;
+INFO  [2024-02-09 04:42:49,754] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;41 - add operation to dataset versions&quot;
+INFO  [2024-02-09 04:42:49,764] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;42 - add job symlink target&quot;
+INFO  [2024-02-09 04:42:49,774] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;43 - alter jobs add job parent uuid&quot;
+INFO  [2024-02-09 04:42:49,778] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;jobs_namespace_uuid_name_key&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,781] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: ALTER TABLE / ADD CONSTRAINT USING INDEX will rename index &quot;jobs_namespace_uuid_name_parent&quot; to &quot;unique_jobs_namespace_uuid_name_parent&quot;
+INFO  [2024-02-09 04:42:49,791] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44 - runs job versions add job uuid&quot;
+INFO  [2024-02-09 04:42:49,794] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger &quot;runs_insert_job_uuid&quot; for relation &quot;runs&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,803] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44.1 - UpdateRunsWithJobUUID&quot; [non-transactional]
+INFO  [2024-02-09 04:42:49,811] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44.2 - BackfillAirflowParentRuns&quot; [non-transactional]
+INFO  [2024-02-09 04:42:49,827] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44.3 - BackfillJobsWithParents&quot; [non-transactional]
+INFO  [2024-02-09 04:42:49,843] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;45 - update jobs view rule&quot;
+INFO  [2024-02-09 04:42:49,844] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint &quot;jobs_namespace_uuid_name_key&quot; of relation &quot;jobs&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,845] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;jobs_namespace_uuid_name_key&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,846] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint &quot;jobs_namespace_uuid_name_null_parent&quot; of relation &quot;jobs&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,847] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;jobs_namespace_uuid_name_parent&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,848] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;unique_jobs_namespace_uuid_name_parent&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,860] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;46 - add hidden column to jobs and datasets&quot;
+INFO  [2024-02-09 04:42:49,869] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;47 - add lineage event indexes&quot; [non-transactional]
+INFO  [2024-02-09 04:42:49,878] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;48 - dataset symlinks&quot;
+INFO  [2024-02-09 04:42:49,882] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: type &quot;dataset_name&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:49,892] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;49 - column lineage&quot;
+INFO  [2024-02-09 04:42:49,901] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;50 - index dataset fields&quot;
+INFO  [2024-02-09 04:42:49,910] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;51 - job indices for lineage&quot;
+INFO  [2024-02-09 04:42:49,922] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;52 - alter dataset symlinks&quot;
+INFO  [2024-02-09 04:42:49,933] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;53 - add hidden namespace&quot;
+INFO  [2024-02-09 04:42:49,942] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;54 - lineage events created at indexed&quot;
+INFO  [2024-02-09 04:42:49,952] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;55.1 - add dataset facets&quot;
+INFO  [2024-02-09 04:42:49,962] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;55.2 - add job facets&quot;
+INFO  [2024-02-09 04:42:49,972] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;55.3 - add run facets&quot;
+INFO  [2024-02-09 04:42:49,982] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;56.1 - CreateFacetViews&quot; [non-transactional]
+INFO  [2024-02-09 04:42:50,029] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;57.1 - add migration lock&quot;
+INFO  [2024-02-09 04:42:50,059] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;57.2 - BackFillFacets&quot; [non-transactional]
+INFO  [2024-02-09 04:42:50,062] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table
+INFO  [2024-02-09 04:42:50,074] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table finished
+INFO  [2024-02-09 04:42:50,075] marquez.db.migrations.V57_1__BackfillFacets: Estimating 0 events in lineage_events table
+INFO  [2024-02-09 04:42:50,095] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;58 - job fqn name index&quot;
+INFO  [2024-02-09 04:42:50,104] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;59.1 - column lineage add indexes&quot;
+INFO  [2024-02-09 04:42:50,114] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;59.2 - facet tables indexes&quot;
+INFO  [2024-02-09 04:42:50,125] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;60 - alter job versions to drop job context uuid&quot;
+INFO  [2024-02-09 04:42:50,135] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;61 - unique job fqn index&quot;
+INFO  [2024-02-09 04:42:50,149] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;62 - index run states and parent run&quot;
+INFO  [2024-02-09 04:42:50,164] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;63 - alter tables add on cascade delete&quot;
+INFO  [2024-02-09 04:42:50,204] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;64 - drop job contexts&quot;
+INFO  [2024-02-09 04:42:50,213] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;65 - alter dataset facets to change lineage event type as nullable&quot;
+INFO  [2024-02-09 04:42:50,222] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;66.1 - alter job facets&quot;
+INFO  [2024-02-09 04:42:50,232] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;66.2 - alter lineage events add event type&quot;
+INFO  [2024-02-09 04:42:50,240] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;66.3 - BackfillJobFacetsWithJobVersion&quot; [non-transactional]
+INFO  [2024-02-09 04:42:50,251] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;67.1 - job versions io mapping add job reference&quot;
+INFO  [2024-02-09 04:42:50,264] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;67.2 - Back fill job_uuid and is_current_job_version in job_versions_io_mapping table&quot; [non-transactional]
+INFO  [2024-02-09 04:42:50,279] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; with repeatable migration &quot;1 Jobs view and rewrite function&quot;
+INFO  [2024-02-09 04:42:50,282] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger &quot;update_symlinks&quot; for relation &quot;jobs_view&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:50,291] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; with repeatable migration &quot;2 Runs view&quot;
+INFO  [2024-02-09 04:42:50,301] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; with repeatable migration &quot;3 Datasets view&quot;
+INFO  [2024-02-09 04:42:50,303] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: view &quot;datasets_view&quot; does not exist, skipping
+INFO  [2024-02-09 04:42:50,310] org.flywaydb.core.internal.command.DbMigrate: Successfully applied 82 migrations to schema &quot;public&quot;, now at version v67.2 (execution time 00:01.084s)
+INFO  [2024-02-09 04:42:50,312] marquez.db.DbMigration: Successfully applied '82' migrations to database.
+INFO  [2024-02-09 04:42:50,396] io.dropwizard.server.ServerFactory: Starting MarquezApp
+    __  ___
+   /  |/  /___ __________ ___  _____  ____
+  / /|_/ / __ `/ ___/ __ `/ / / / _ \/_  /
+ / /  / / /_/ / /  / /_/ / /_/ /  __/ / /_
+/_/  /_/\__,_/_/   \__, /\__,_/\___/ /___/
+                     /_/
+INFO  [2024-02-09 04:42:50,398] org.eclipse.jetty.setuid.SetUIDListener: Opened application@5bd1aee5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:50,398] org.eclipse.jetty.setuid.SetUIDListener: Opened admin@76ea3de2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:50,398] org.eclipse.jetty.server.Server: jetty-9.4.53.v20231009; built: 2023-10-09T12:29:09.265Z; git: 27bde00a0b95a1d5bbee0eae7984f891d2d0f8c9; jvm 20.0.1
+
+INFO  [2024-02-09 04:42:50,489] io.dropwizard.jersey.DropwizardResourceConfig: The following paths were found for the configured resources:
+
+    GET     /api/v1/column-lineage (marquez.api.ColumnLineageResource)
+    GET     /api/v1/events/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/jobs/runs/{id}/ (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/abort (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/complete (marquez.api.RunResource)
+    GET     /api/v1/jobs/runs/{id}/facets (marquez.api.JobResource)
+    POST    /api/v1/jobs/runs/{id}/fail (marquez.api.RunResource)
+    POST    /api/v1/jobs/runs/{id}/start (marquez.api.RunResource)
+    GET     /api/v1/lineage (marquez.api.OpenLineageResource)
+    POST    /api/v1/lineage (marquez.api.OpenLineageResource)
+    GET     /api/v1/namespaces (marquez.api.NamespaceResource)
+    DELETE  /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    PUT     /api/v1/namespaces/{namespace} (marquez.api.NamespaceResource)
+    GET     /api/v1/namespaces/{namespace}/datasets (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    PUT     /api/v1/namespaces/{namespace}/datasets/{dataset} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/fields/{field}/tags/{tag} (marquez.api.DatasetResource)
+    DELETE  /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    POST    /api/v1/namespaces/{namespace}/datasets/{dataset}/tags/{tag} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/datasets/{dataset}/versions/{version} (marquez.api.DatasetResource)
+    GET     /api/v1/namespaces/{namespace}/jobs (marquez.api.JobResource)
+    DELETE  /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    PUT     /api/v1/namespaces/{namespace}/jobs/{job} (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    POST    /api/v1/namespaces/{namespace}/jobs/{job}/runs (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions (marquez.api.JobResource)
+    GET     /api/v1/namespaces/{namespace}/jobs/{job}/versions/{version} (marquez.api.JobResource)
+    GET     /api/v1/runlineage/upstream (marquez.api.OpenLineageResource)
+    GET     /api/v1/search (marquez.api.SearchResource)
+    GET     /api/v1/sources (marquez.api.SourceResource)
+    GET     /api/v1/sources/{source} (marquez.api.SourceResource)
+    PUT     /api/v1/sources/{source} (marquez.api.SourceResource)
+    GET     /api/v1/tags (marquez.api.TagResource)
+    PUT     /api/v1/tags/{name} (marquez.api.TagResource)
+
+INFO  [2024-02-09 04:42:50,490] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@3a90dfff{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:50,490] io.dropwizard.setup.AdminEnvironment: tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+INFO  [2024-02-09 04:42:50,491] org.eclipse.jetty.server.handler.ContextHandler: Started i.d.j.MutableServletContextHandler@6ca72c12{/,null,AVAILABLE}
+INFO  [2024-02-09 04:42:50,492] org.eclipse.jetty.server.AbstractConnector: Started application@5bd1aee5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:50,492] org.eclipse.jetty.server.AbstractConnector: Started admin@76ea3de2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:50,492] org.eclipse.jetty.server.Server: Started @116098ms
+INFO  [2024-02-09 04:42:50,616] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;GET /api/v1/tags?limit=100&amp;offset=0 HTTP/1.1&quot; 200 145 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 11
+INFO  [2024-02-09 04:42:50,632] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573 HTTP/1.1&quot; 200 218 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 14
+INFO  [2024-02-09 04:42:50,640] marquez.service.SourceService: Create/upsert source 'test_source903663573' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test1262394181, description=Optional[test_description1381883393])
+INFO  [2024-02-09 04:42:50,654] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/sources/test_source903663573 HTTP/1.1&quot; 200 239 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 20
+INFO  [2024-02-09 04:42:50,671] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1741596938' for namespace 's3://test_namespace1495996573' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1741596938), sourceName=SourceName(value=test_source903663573), fields=[Field(name=FieldName(value=test_field1194897443), type=VARCHAR(31), tags=[TagName(value=SENSITIVE)], description=Optional[test_description1081892787]), Field(name=FieldName(value=test_field1557924035), type=VARCHAR(238), tags=[], description=Optional[test_description575892412])], tags=[TagName(value=PII)], description=Optional[test_description268627795], runId=Optional.empty))
+INFO  [2024-02-09 04:42:50,767] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573/datasets/test_dataset1741596938 HTTP/1.1&quot; 200 782 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 116
+INFO  [2024-02-09 04:42:50,780] marquez.api.DatasetResource: Successfully tagged dataset 'test_dataset1741596938' with 'TESTDATASETTAG'.
+INFO  [2024-02-09 04:42:50,801] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573/datasets/test_dataset1741596938/tags/TESTDATASETTAG HTTP/1.1&quot; 200 799 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 29
+INFO  [2024-02-09 04:42:50,810] marquez.api.DatasetResource: Deleted tag 'TESTDATASETTAG' from dataset 'test_dataset1741596938' on namespace 's3://test_namespace1495996573'
+INFO  [2024-02-09 04:42:50,820] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;DELETE /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573/datasets/test_dataset1741596938/tags/TESTDATASETTAG HTTP/1.1&quot; 200 782 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 17
+INFO  [2024-02-09 04:42:50,827] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;GET /api/v1/tags?limit=100&amp;offset=0 HTTP/1.1&quot; 200 190 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 4
+INFO  [2024-02-09 04:42:50,834] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/tags/test_tag1568685431 HTTP/1.1&quot; 200 72 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 8
+INFO  [2024-02-09 04:42:50,840] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;GET /api/v1/tags?limit=100&amp;offset=0 HTTP/1.1&quot; 200 178 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 4
+INFO  [2024-02-09 04:42:50,851] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573 HTTP/1.1&quot; 200 218 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 9
+INFO  [2024-02-09 04:42:50,854] marquez.service.SourceService: Create/upsert source 'test_source903663573' with meta: SourceMeta(type=SourceType(value=POSTGRESQL), connectionUrl=postgresql://localhost:5432/test1262394181, description=Optional[test_description1381883393])
+INFO  [2024-02-09 04:42:50,862] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/sources/test_source903663573 HTTP/1.1&quot; 200 239 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 10
+INFO  [2024-02-09 04:42:50,869] marquez.service.DatasetService: Creating or updating dataset 'test_dataset1741596938' for namespace 's3://test_namespace1495996573' with meta: DbTableMeta(super=DatasetMeta(type=DB_TABLE, physicalName=DatasetName(value=test_dataset1741596938), sourceName=SourceName(value=test_source903663573), fields=[Field(name=FieldName(value=test_field1194897443), type=VARCHAR(31), tags=[TagName(value=SENSITIVE)], description=Optional[test_description1081892787]), Field(name=FieldName(value=test_field1557924035), type=VARCHAR(238), tags=[], description=Optional[test_description575892412])], tags=[TagName(value=PII)], description=Optional[test_description268627795], runId=Optional.empty))
+INFO  [2024-02-09 04:42:50,914] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;PUT /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573/datasets/test_dataset1741596938 HTTP/1.1&quot; 200 782 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 51
+INFO  [2024-02-09 04:42:50,928] marquez.api.DatasetResource: Tagging field 'test_field1194897443' for dataset 'test_dataset1741596938' with 'TESTFIELDTAG'.
+INFO  [2024-02-09 04:42:50,964] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;POST /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573/datasets/test_dataset1741596938/fields/test_field1194897443/tags/TESTFIELDTAG HTTP/1.1&quot; 200 797 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 49
+INFO  [2024-02-09 04:42:50,977] marquez.api.DatasetResource: Deleting Tag 'TESTFIELDTAG' from field 'test_field1194897443' on dataset 'test_dataset1741596938' in namepspace 's3://test_namespace1495996573'.
+INFO  [2024-02-09 04:42:50,991] marquez.logging.LoggingMdcFilter: status: 200
+127.0.0.1 - - [09/Feb/2024:04:42:50 +0000] &quot;DELETE /api/v1/namespaces/s3:%2F%2Ftest_namespace1495996573/datasets/test_dataset1741596938/fields/test_field1194897443/tags/TESTFIELDTAG HTTP/1.1&quot; 200 782 &quot;-&quot; &quot;marquez-java/0.45.0-SNAPSHOT&quot; 26
+INFO  [2024-02-09 04:42:50,994] org.eclipse.jetty.server.AbstractConnector: Stopped application@5bd1aee5{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+INFO  [2024-02-09 04:42:50,994] org.eclipse.jetty.server.AbstractConnector: Stopped admin@76ea3de2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+INFO  [2024-02-09 04:42:50,995] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@6ca72c12{/,null,STOPPED}
+INFO  [2024-02-09 04:42:50,996] org.eclipse.jetty.server.handler.ContextHandler: Stopped i.d.j.MutableServletContextHandler@3a90dfff{/,null,STOPPED}
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at 09-Feb-2024, 10:14:18 am</p>
+</div>
+</div>
+</body>
+</html>

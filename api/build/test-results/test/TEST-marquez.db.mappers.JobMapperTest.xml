@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="marquez.db.mappers.JobMapperTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-09T04:43:45" hostname="MacBook-Air.local" time="0.02">
+  <properties/>
+  <testcase name="shouldMapFullJob()" classname="marquez.db.mappers.JobMapperTest" time="0.018"/>
+  <testcase name="testMapJobTypeJobFacet()" classname="marquez.db.mappers.JobMapperTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

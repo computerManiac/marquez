@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - LineageDaoTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>LineageDaoTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/marquez.db.html">marquez.db</a> &gt; LineageDaoTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">20</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">15.842s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetCurrentRuns()</td>
+<td class="success">0.569s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCurrentRunsGetsLatestRun()</td>
+<td class="success">0.981s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCurrentRunsWithFacetsGetsLatestRun()</td>
+<td class="success">0.929s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCurrentRunsWithFailedJob()</td>
+<td class="success">0.099s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetDatasetData()</td>
+<td class="success">0.556s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetDatasetDataDoesNotReturnDeletedDataset()</td>
+<td class="success">0.155s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetDatasetDatalifecycleStateReturned()</td>
+<td class="success">0.105s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetInputDatasetsWithJobThatHasMultipleVersions()</td>
+<td class="success">0.991s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetJobFromInputOrOutput()</td>
+<td class="success">0.168s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetJobFromInputOrOutputPrefersRecentOutputJob()</td>
+<td class="success">0.536s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineage()</td>
+<td class="success">3.114s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageChangedJobVersion()</td>
+<td class="success">0.152s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageForSymlinkedJob()</td>
+<td class="success">3.268s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageWithFailedConsumer()</td>
+<td class="success">0.164s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageWithFailedProducer()</td>
+<td class="success">0.172s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageWithJobThatHasNoDatasets()</td>
+<td class="success">0.083s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageWithJobThatHasNoDownstreamConsumers()</td>
+<td class="success">0.108s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageWithJobThatSharesNoDatasets()</td>
+<td class="success">0.410s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetLineageWithNewJobInRunningState()</td>
+<td class="success">0.096s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetRunLineage()</td>
+<td class="success">3.186s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>INFO  [2024-02-09 10:13:16,025] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:13:16,025] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:13:16,025] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:13:16,038] org.flywaydb.core.internal.database.base.BaseDatabaseType: Database: jdbc:postgresql://localhost:55773/test (PostgreSQL 14.10)
+INFO  [2024-02-09 10:13:16,050] org.flywaydb.core.internal.command.DbValidate: Successfully validated 82 migrations (execution time 00:00.007s)
+INFO  [2024-02-09 10:13:16,055] org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory: Creating Schema History table &quot;public&quot;.&quot;flyway_schema_history&quot; ...
+INFO  [2024-02-09 10:13:16,061] org.flywaydb.core.internal.command.DbMigrate: Current version of schema &quot;public&quot;: &lt;&lt; Empty Schema &gt;&gt;
+INFO  [2024-02-09 10:13:16,063] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;1 - initial schema&quot;
+INFO  [2024-02-09 10:13:16,084] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;2 - add job contexts&quot;
+INFO  [2024-02-09 10:13:16,092] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;2.1 - alter job versions to add job context uuid&quot;
+INFO  [2024-02-09 10:13:16,099] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;3 - drop not null constraint on job location&quot;
+INFO  [2024-02-09 10:13:16,106] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;4 - add dataset fields&quot;
+INFO  [2024-02-09 10:13:16,115] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;5 - add tags&quot;
+INFO  [2024-02-09 10:13:16,124] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;6 - alter datasets to add last modified&quot;
+INFO  [2024-02-09 10:13:16,131] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;7 - alter run args to change args&quot;
+INFO  [2024-02-09 10:13:16,138] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;8 - alter datasets to change unique constraint&quot;
+INFO  [2024-02-09 10:13:16,146] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;9 - alter sources to drop composite unique constraint&quot;
+INFO  [2024-02-09 10:13:16,153] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;10 - drop unique constraint on job name&quot;
+INFO  [2024-02-09 10:13:16,159] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;11 - alter datasets to rename last modified&quot;
+INFO  [2024-02-09 10:13:16,166] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;12 - alter dataset fields to change unique constraint&quot;
+INFO  [2024-02-09 10:13:16,173] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;13 - alter run add start end state&quot;
+INFO  [2024-02-09 10:13:16,181] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;14 - index datasetversion datasetid&quot;
+INFO  [2024-02-09 10:13:16,188] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;15 - index created at and current run state on runs&quot;
+INFO  [2024-02-09 10:13:16,197] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;16 - index created at on runs&quot;
+INFO  [2024-02-09 10:13:16,205] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;17.1 - unique version constraint&quot;
+INFO  [2024-02-09 10:13:16,213] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;17.2 - open lineage&quot;
+INFO  [2024-02-09 10:13:16,219] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;18 - drop dataset constraint&quot;
+INFO  [2024-02-09 10:13:16,226] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;19 - alter run to add external id&quot;
+INFO  [2024-02-09 10:13:16,232] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;20 - drop lineage pk&quot;
+INFO  [2024-02-09 10:13:16,238] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;21 - alter jobs to add namespace name&quot;
+INFO  [2024-02-09 10:13:16,245] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;22 - alter job versions to add namespace&quot;
+INFO  [2024-02-09 10:13:16,253] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;23 - alter runs&quot;
+INFO  [2024-02-09 10:13:16,263] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;24 - alter jobs&quot;
+INFO  [2024-02-09 10:13:16,272] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;25 - alter datasets&quot;
+INFO  [2024-02-09 10:13:16,280] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;26 - alter jobs change type&quot;
+INFO  [2024-02-09 10:13:16,289] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;27 - alter runs add context&quot;
+INFO  [2024-02-09 10:13:16,296] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;28 - update jobs fix inputs&quot;
+INFO  [2024-02-09 10:13:16,303] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;29 - alter dataset versions add fields&quot;
+INFO  [2024-02-09 10:13:16,329] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;30 - alter runs change transitioned at type&quot;
+INFO  [2024-02-09 10:13:16,337] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;31 - alter job io mapping&quot;
+INFO  [2024-02-09 10:13:16,349] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;32 - index runs created at&quot;
+INFO  [2024-02-09 10:13:16,356] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;33 - index lineage events run id&quot;
+INFO  [2024-02-09 10:13:16,365] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;34 - drop not null constraint on field type&quot;
+INFO  [2024-02-09 10:13:16,372] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;35 - drop io mapping tables&quot;
+INFO  [2024-02-09 10:13:16,380] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;36 - drop run id column in lineage events&quot;
+INFO  [2024-02-09 10:13:16,388] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;37 - alter dataset fields to change type&quot;
+INFO  [2024-02-09 10:13:16,395] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;38 - alter namespaces to resize name&quot;
+INFO  [2024-02-09 10:13:16,402] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;39 - alter sources to resize name&quot;
+INFO  [2024-02-09 10:13:16,408] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;40 - alter tables resize namespace and connection url&quot;
+INFO  [2024-02-09 10:13:16,419] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;41 - add operation to dataset versions&quot;
+INFO  [2024-02-09 10:13:16,426] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;42 - add job symlink target&quot;
+INFO  [2024-02-09 10:13:16,434] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;43 - alter jobs add job parent uuid&quot;
+INFO  [2024-02-09 10:13:16,437] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;jobs_namespace_uuid_name_key&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,439] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: ALTER TABLE / ADD CONSTRAINT USING INDEX will rename index &quot;jobs_namespace_uuid_name_parent&quot; to &quot;unique_jobs_namespace_uuid_name_parent&quot;
+INFO  [2024-02-09 10:13:16,446] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44 - runs job versions add job uuid&quot;
+INFO  [2024-02-09 10:13:16,448] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger &quot;runs_insert_job_uuid&quot; for relation &quot;runs&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,455] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44.1 - UpdateRunsWithJobUUID&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,461] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44.2 - BackfillAirflowParentRuns&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,469] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;44.3 - BackfillJobsWithParents&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,478] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;45 - update jobs view rule&quot;
+INFO  [2024-02-09 10:13:16,479] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint &quot;jobs_namespace_uuid_name_key&quot; of relation &quot;jobs&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,479] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;jobs_namespace_uuid_name_key&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,480] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: constraint &quot;jobs_namespace_uuid_name_null_parent&quot; of relation &quot;jobs&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,481] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;jobs_namespace_uuid_name_parent&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,482] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: index &quot;unique_jobs_namespace_uuid_name_parent&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,491] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;46 - add hidden column to jobs and datasets&quot;
+INFO  [2024-02-09 10:13:16,498] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;47 - add lineage event indexes&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,505] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;48 - dataset symlinks&quot;
+INFO  [2024-02-09 10:13:16,508] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: type &quot;dataset_name&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,514] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;49 - column lineage&quot;
+INFO  [2024-02-09 10:13:16,522] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;50 - index dataset fields&quot;
+INFO  [2024-02-09 10:13:16,528] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;51 - job indices for lineage&quot;
+INFO  [2024-02-09 10:13:16,536] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;52 - alter dataset symlinks&quot;
+INFO  [2024-02-09 10:13:16,544] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;53 - add hidden namespace&quot;
+INFO  [2024-02-09 10:13:16,550] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;54 - lineage events created at indexed&quot;
+INFO  [2024-02-09 10:13:16,558] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;55.1 - add dataset facets&quot;
+INFO  [2024-02-09 10:13:16,566] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;55.2 - add job facets&quot;
+INFO  [2024-02-09 10:13:16,574] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;55.3 - add run facets&quot;
+INFO  [2024-02-09 10:13:16,581] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;56.1 - CreateFacetViews&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,597] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;57.1 - add migration lock&quot;
+INFO  [2024-02-09 10:13:16,604] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;57.2 - BackFillFacets&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,606] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table
+INFO  [2024-02-09 10:13:16,617] marquez.db.migrations.V57_1__BackfillFacets: Vacuuming lineage_events table finished
+INFO  [2024-02-09 10:13:16,618] marquez.db.migrations.V57_1__BackfillFacets: Estimating 0 events in lineage_events table
+INFO  [2024-02-09 10:13:16,633] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;58 - job fqn name index&quot;
+INFO  [2024-02-09 10:13:16,641] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;59.1 - column lineage add indexes&quot;
+INFO  [2024-02-09 10:13:16,649] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;59.2 - facet tables indexes&quot;
+INFO  [2024-02-09 10:13:16,657] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;60 - alter job versions to drop job context uuid&quot;
+INFO  [2024-02-09 10:13:16,664] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;61 - unique job fqn index&quot;
+INFO  [2024-02-09 10:13:16,676] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;62 - index run states and parent run&quot;
+INFO  [2024-02-09 10:13:16,687] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;63 - alter tables add on cascade delete&quot;
+INFO  [2024-02-09 10:13:16,722] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;64 - drop job contexts&quot;
+INFO  [2024-02-09 10:13:16,731] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;65 - alter dataset facets to change lineage event type as nullable&quot;
+INFO  [2024-02-09 10:13:16,738] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;66.1 - alter job facets&quot;
+INFO  [2024-02-09 10:13:16,747] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;66.2 - alter lineage events add event type&quot;
+INFO  [2024-02-09 10:13:16,755] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;66.3 - BackfillJobFacetsWithJobVersion&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,764] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;67.1 - job versions io mapping add job reference&quot;
+INFO  [2024-02-09 10:13:16,774] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; to version &quot;67.2 - Back fill job_uuid and is_current_job_version in job_versions_io_mapping table&quot; [non-transactional]
+INFO  [2024-02-09 10:13:16,782] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; with repeatable migration &quot;1 Jobs view and rewrite function&quot;
+INFO  [2024-02-09 10:13:16,785] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: trigger &quot;update_symlinks&quot; for relation &quot;jobs_view&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,792] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; with repeatable migration &quot;2 Runs view&quot;
+INFO  [2024-02-09 10:13:16,800] org.flywaydb.core.internal.command.DbMigrate: Migrating schema &quot;public&quot; with repeatable migration &quot;3 Datasets view&quot;
+INFO  [2024-02-09 10:13:16,801] org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor: DB: view &quot;datasets_view&quot; does not exist, skipping
+INFO  [2024-02-09 10:13:16,807] org.flywaydb.core.internal.command.DbMigrate: Successfully applied 82 migrations to schema &quot;public&quot;, now at version v67.2 (execution time 00:00.747s)
+WARN  [2024-02-09 10:13:31,324] marquez.db.Columns: Could not read source URI for column 'current_location' null would be returned
+! java.net.MalformedURLException: no protocol: git@github:location
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:764)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:646)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:582)
+! at marquez.db.Columns.urlOrNull(Columns.java:256)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:49)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:29)
+! at org.jdbi.v3.core.result.internal.ResultSetResultIterator.next(ResultSetResultIterator.java:83)
+! at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+! at org.jdbi.v3.core.result.ResultIterator.forEachRemaining(ResultIterator.java:39)
+! at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1921)
+! at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+! at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+! at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+! at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+! at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+! at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:341)
+! at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.mappedResult(ResultReturner.java:293)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:65)
+! at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:191)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:27)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy108.getLineage(Unknown Source)
+! at marquez.db.LineageDaoTest.testGetInputDatasetsWithJobThatHasMultipleVersions(LineageDaoTest.java:466)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+! at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+! at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+! at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+! at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+! at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+! at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+! at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+WARN  [2024-02-09 10:13:31,326] marquez.db.Columns: Could not read source URI for column 'current_location' null would be returned
+! java.net.MalformedURLException: no protocol: git@github:location
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:764)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:646)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:582)
+! at marquez.db.Columns.urlOrNull(Columns.java:256)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:49)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:29)
+! at org.jdbi.v3.core.result.internal.ResultSetResultIterator.next(ResultSetResultIterator.java:83)
+! at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+! at org.jdbi.v3.core.result.ResultIterator.forEachRemaining(ResultIterator.java:39)
+! at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1921)
+! at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+! at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+! at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+! at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+! at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+! at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:341)
+! at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.mappedResult(ResultReturner.java:293)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:65)
+! at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:191)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:27)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy108.getLineage(Unknown Source)
+! at marquez.db.LineageDaoTest.testGetInputDatasetsWithJobThatHasMultipleVersions(LineageDaoTest.java:466)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+! at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+! at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+! at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+! at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+! at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+! at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+! at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+WARN  [2024-02-09 10:13:31,332] marquez.db.Columns: Could not read source URI for column 'current_location' null would be returned
+! java.net.MalformedURLException: no protocol: git@github:location
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:764)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:646)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:582)
+! at marquez.db.Columns.urlOrNull(Columns.java:256)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:49)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:29)
+! at org.jdbi.v3.core.result.internal.ResultSetResultIterator.next(ResultSetResultIterator.java:83)
+! at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+! at org.jdbi.v3.core.result.ResultIterator.forEachRemaining(ResultIterator.java:39)
+! at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1921)
+! at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+! at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+! at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+! at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+! at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+! at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:341)
+! at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.mappedResult(ResultReturner.java:293)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:65)
+! at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:191)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:27)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy108.getLineage(Unknown Source)
+! at marquez.db.LineageDaoTest.testGetInputDatasetsWithJobThatHasMultipleVersions(LineageDaoTest.java:466)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+! at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+! at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+! at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+! at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+! at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+! at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+! at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+WARN  [2024-02-09 10:13:31,333] marquez.db.Columns: Could not read source URI for column 'current_location' null would be returned
+! java.net.MalformedURLException: no protocol: git@github:location
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:764)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:646)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:582)
+! at marquez.db.Columns.urlOrNull(Columns.java:256)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:49)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:29)
+! at org.jdbi.v3.core.result.internal.ResultSetResultIterator.next(ResultSetResultIterator.java:83)
+! at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+! at org.jdbi.v3.core.result.ResultIterator.forEachRemaining(ResultIterator.java:39)
+! at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1921)
+! at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+! at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+! at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+! at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+! at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+! at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:341)
+! at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.mappedResult(ResultReturner.java:293)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:65)
+! at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:191)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:27)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy108.getLineage(Unknown Source)
+! at marquez.db.LineageDaoTest.testGetInputDatasetsWithJobThatHasMultipleVersions(LineageDaoTest.java:466)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+! at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+! at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+! at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+! at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+! at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+! at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+! at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+WARN  [2024-02-09 10:13:31,334] marquez.db.Columns: Could not read source URI for column 'current_location' null would be returned
+! java.net.MalformedURLException: no protocol: git@github:location
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:764)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:646)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:582)
+! at marquez.db.Columns.urlOrNull(Columns.java:256)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:49)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:29)
+! at org.jdbi.v3.core.result.internal.ResultSetResultIterator.next(ResultSetResultIterator.java:83)
+! at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+! at org.jdbi.v3.core.result.ResultIterator.forEachRemaining(ResultIterator.java:39)
+! at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1921)
+! at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+! at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+! at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+! at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+! at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+! at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:341)
+! at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.mappedResult(ResultReturner.java:293)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:65)
+! at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:191)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:27)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy108.getLineage(Unknown Source)
+! at marquez.db.LineageDaoTest.testGetInputDatasetsWithJobThatHasMultipleVersions(LineageDaoTest.java:466)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+! at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+! at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+! at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+! at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+! at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+! at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+! at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+WARN  [2024-02-09 10:13:31,334] marquez.db.Columns: Could not read source URI for column 'current_location' null would be returned
+! java.net.MalformedURLException: no protocol: git@github:location
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:764)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:646)
+! at java.base/java.net.URL.&lt;init&gt;(URL.java:582)
+! at marquez.db.Columns.urlOrNull(Columns.java:256)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:49)
+! at marquez.db.mappers.JobDataMapper.map(JobDataMapper.java:29)
+! at org.jdbi.v3.core.result.internal.ResultSetResultIterator.next(ResultSetResultIterator.java:83)
+! at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+! at org.jdbi.v3.core.result.ResultIterator.forEachRemaining(ResultIterator.java:39)
+! at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1921)
+! at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+! at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+! at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+! at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+! at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+! at org.jdbi.v3.core.result.ResultIterable.collect(ResultIterable.java:341)
+! at org.jdbi.v3.sqlobject.statement.internal.ResultReturner$CollectedResultReturner.mappedResult(ResultReturner.java:293)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.lambda$configureReturner$0(SqlQueryHandler.java:65)
+! at org.jdbi.v3.sqlobject.statement.internal.CustomizingStatementHandler.invoke(CustomizingStatementHandler.java:191)
+! at org.jdbi.v3.sqlobject.statement.internal.SqlQueryHandler.invoke(SqlQueryHandler.java:27)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.lambda$invoke$0(ExtensionMetadata.java:345)
+! at org.jdbi.v3.core.AbstractHandleSupplier.invokeInContext(AbstractHandleSupplier.java:36)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.call(ExtensionMetadata.java:363)
+! at org.jdbi.v3.core.extension.ExtensionMetadata$ExtensionHandlerInvoker.invoke(ExtensionMetadata.java:346)
+! at org.jdbi.v3.core.extension.ExtensionFactoryDelegate.lambda$attach$0(ExtensionFactoryDelegate.java:118)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.invoke(OnDemandExtensions.java:85)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$2(OnDemandExtensions.java:71)
+! at org.jdbi.v3.core.Jdbi.callWithExtension(Jdbi.java:544)
+! at org.jdbi.v3.core.Jdbi.withExtension(Jdbi.java:531)
+! at org.jdbi.v3.core.internal.OnDemandExtensions.lambda$createProxy$3(OnDemandExtensions.java:71)
+! at jdk.proxy3/jdk.proxy3.$Proxy108.getLineage(Unknown Source)
+! at marquez.db.LineageDaoTest.testGetInputDatasetsWithJobThatHasMultipleVersions(LineageDaoTest.java:466)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+! at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+! at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+! at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+! at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+! at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+! at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+! at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+! at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+! at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+! at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+! at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+! at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+! at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+! at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+! at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+! at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+! at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+! at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+! at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+! at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+! at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+! at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+! at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+! at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+! at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+INFO  [2024-02-09 10:13:32,669] org.flywaydb.core.internal.license.VersionPrinter: Flyway Community Edition 8.5.13 by Redgate
+INFO  [2024-02-09 10:13:32,669] org.flywaydb.core.internal.license.VersionPrinter: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#8.5.13
+INFO  [2024-02-09 10:13:32,669] org.flywaydb.core.internal.license.VersionPrinter: 
+INFO  [2024-02-09 10:13:32,687] org.flywaydb.core.internal.command.DbClean: Successfully dropped pre-schema database level objects (execution time 00:00.000s)
+INFO  [2024-02-09 10:13:32,737] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema &quot;public&quot; (execution time 00:00.048s)
+INFO  [2024-02-09 10:13:32,744] org.flywaydb.core.internal.command.DbClean: Successfully cleaned schema &quot;public&quot; (execution time 00:00.006s)
+INFO  [2024-02-09 10:13:32,744] org.flywaydb.core.internal.command.DbClean: Successfully dropped post-schema database level objects (execution time 00:00.000s)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at 09-Feb-2024, 10:14:18 am</p>
+</div>
+</div>
+</body>
+</html>
